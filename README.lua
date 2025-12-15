@@ -288,4 +288,37 @@ CSOff.MouseButton1Click:Connect(function()
 	print("CS OFF")
 end)
 
+-- === HS (HEAL) TOGGLE LOOP ===
+
+local hsEnabled = false
+local hsThread
+
+HSOn.MouseButton1Click:Connect(function()
+	if hsEnabled then return end
+	hsEnabled = true
+	print("HS ON")
+
+	hsThread = task.spawn(function()
+		while hsEnabled do
+			-- 🔁 PUT YOUR HEAL SPAM CODE HERE 🔁
+			-- example (you will add):
+			-- FireServer(...)
+			-- tool:Activate()
+			-- keypress(...)
+					                local args = {
+	              "Medic"
+}
+game:GetService("ReplicatedStorage"):WaitForChild("ClassAbilityEvent"):FireServer(unpack(args))
+
+			task.wait(0.03)
+		end
+	end)
+end)
+
+HSOff.MouseButton1Click:Connect(function()
+	hsEnabled = false
+	print("HS OFF")
+end)
+
+
 
