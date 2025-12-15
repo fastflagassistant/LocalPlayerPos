@@ -237,42 +237,36 @@ local function DGTLMJ_fake_script() -- HSOn.LocalScript
 end
 coroutine.wrap(DGTLMJ_fake_script)()
 
--- HS toggle loop logic (Wave / Luau)
--- Drop this at the bottom of your script, replacing the HSOn / HSOff fake scripts
+-- === DELTA / EXECUTOR SAFE HS TOGGLE LOOP ===
 
 local hsEnabled = false
-local hsThread = nil
+local hsThread
 
--- reference buttons directly (they already exist)
-local HSOn = HSOn
-local HSOff = HSOff
+-- IMPORTANT: use MouseButton1Click, not Activated
+HSOn.MouseButton1Click:Connect(function()
+	if hsEnabled then return end
+	hsEnabled = true
+	print("HS ON")
 
-local function startHSLoop()
-	if hsThread then return end
 	hsThread = task.spawn(function()
 		while hsEnabled do
 			local args = {
-				"Warhorn"
-			}
-			game:GetService("ReplicatedStorage"):WaitForChild("ClassAbilityEvent"):FireServer(unpack(args))
-			print("HS loop running")
+	"Warhorn"
+}
+game:GetService("ReplicatedStorage"):WaitForChild("ClassAbilityEvent"):FireServer(unpack(args))
 
-			-- example delay, adjust as needed
+			print("SPAMMING HEAL")
+
+			-- example:
+			-- game:GetService("ReplicatedStorage").HealRemote:FireServer()
+
 			task.wait(0.2)
 		end
-		hsThread = nil
 	end)
-end
-
-HSOn.Activated:Connect(function()
-	if hsEnabled then return end
-	hsEnabled = true
-	print("HSOn")
-	startHSLoop()
 end)
 
-HSOff.Activated:Connect(function()
+HSOff.MouseButton1Click:Connect(function()
 	hsEnabled = false
-	print("HSOff")
+	print("HS OFF")
 end)
 
