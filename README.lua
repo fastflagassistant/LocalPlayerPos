@@ -239,17 +239,17 @@ coroutine.wrap(DGTLMJ_fake_script)()
 
 -- === DELTA / EXECUTOR SAFE HS TOGGLE LOOP ===
 
-local hsEnabled = false
-local hsThread
+local WsEnabled = false
+local WsThread
 
 -- IMPORTANT: use MouseButton1Click, not Activated
-HSOn.MouseButton1Click:Connect(function()
-	if hsEnabled then return end
-	hsEnabled = true
+WSOn.MouseButton1Click:Connect(function()
+	if WsEnabled then return end
+	WsEnabled = true
 	print("HS ON")
 
-	hsThread = task.spawn(function()
-		while hsEnabled do
+	WsThread = task.spawn(function()
+		while WsEnabled do
 			local args = {
 	"Warhorn"
 }
@@ -265,7 +265,7 @@ game:GetService("ReplicatedStorage"):WaitForChild("ClassAbilityEvent"):FireServe
 	end)
 end)
 
-HSOff.MouseButton1Click:Connect(function()
+WSOff.MouseButton1Click:Connect(function()
 	hsEnabled = false
 	print("HS OFF")
 end)
