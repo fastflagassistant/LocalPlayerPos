@@ -239,36 +239,34 @@ coroutine.wrap(DGTLMJ_fake_script)()
 
 -- === DELTA / EXECUTOR SAFE HS TOGGLE LOOP ===
 
-local WsEnabled = false
-local WsThread
+-- === WS (WARHORN) TOGGLE LOOP ===
 
--- IMPORTANT: use MouseButton1Click, not Activated
+local wsEnabled = false
+local wsThread
+
 WSOn.MouseButton1Click:Connect(function()
-	if WsEnabled then return end
-	WsEnabled = true
-	print("HS ON")
+	if wsEnabled then return end
+	wsEnabled = true
+	print("WS ON")
 
-	WsThread = task.spawn(function()
-		while WsEnabled do
-			local args = {
-	"Warhorn"
-}
-game:GetService("ReplicatedStorage"):WaitForChild("ClassAbilityEvent"):FireServer(unpack(args))
-
-			print("SPAMMING HEAL")
+	wsThread = task.spawn(function()
+		while wsEnabled do
+			-- 🔁 PUT YOUR WARHORN SPAM CODE HERE 🔁
+			print("SPAMMING WARHORN")
 
 			-- example:
-			-- game:GetService("ReplicatedStorage").HealRemote:FireServer()
+			-- game:GetService("ReplicatedStorage").WarhornRemote:FireServer()
 
-			task.wait(0.03)
+			task.wait(0.25)
 		end
 	end)
 end)
 
 WSOff.MouseButton1Click:Connect(function()
-	hsEnabled = false
-	print("HS OFF")
+	wsEnabled = false
+	print("WS OFF")
 end)
+
 
 -- === CS (CALTROPS) TOGGLE LOOP ===
 
