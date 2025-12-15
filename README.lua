@@ -306,9 +306,10 @@ HSOn.MouseButton1Click:Connect(function()
 			-- tool:Activate()
 			-- keypress(...)
 					                local args = {
-	              "Medic"
+	"Medic"
 }
 game:GetService("ReplicatedStorage"):WaitForChild("ClassAbilityEvent"):FireServer(unpack(args))
+
 
 			task.wait(0.03)
 		end
