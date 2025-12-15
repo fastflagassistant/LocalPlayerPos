@@ -1,154 +1,278 @@
 -- Gui to Lua
 -- Version: 3.2
 
-local MainGUI = Instance.new("ScreenGui")
-local Main = Instance.new("Frame")
-local UICorner = Instance.new("UICorner")
-local SpamHeal = Instance.new("TextButton")
-local UICorner_2 = Instance.new("UICorner")
-local OnOffIWH = Instance.new("Frame")
-local UICorner_3 = Instance.new("UICorner")
-local On = Instance.new("TextButton")
-local UICorner_4 = Instance.new("UICorner")
-local Off = Instance.new("TextButton")
-local UICorner_5 = Instance.new("UICorner")
-local Close = Instance.new("TextButton")
-local UICorner_6 = Instance.new("UICorner")
-local Toggle = Instance.new("BoolValue")
+-- Instances:
 
--- Parent GUI
-MainGUI.Name = "MainGUI"
-MainGUI.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-MainGUI.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local Middle = Instance.new("Frame")
+local Container = Instance.new("Frame")
+local CS = Instance.new("TextBox")
+local HS = Instance.new("TextBox")
+local WS = Instance.new("TextBox")
+local UIPadding = Instance.new("UIPadding")
+local WSOn = Instance.new("TextButton")
+local WSOff = Instance.new("TextButton")
+local CSOff = Instance.new("TextButton")
+local CSOn = Instance.new("TextButton")
+local HSOff = Instance.new("TextButton")
+local HSOn = Instance.new("TextButton")
+local UIPadding_2 = Instance.new("UIPadding")
+local Padding = Instance.new("UIPadding")
 
--- Main frame
-Main.Name = "Main"
-Main.Parent = MainGUI
-Main.BackgroundColor3 = Color3.fromRGB(0,0,0)
-Main.BackgroundTransparency = 0.55
-Main.BorderSizePixel = 0
-Main.Position = UDim2.new(0.04,0,0.09,0)
-Main.Size = UDim2.new(0,319,0,205)
-UICorner.Parent = Main
+--Properties:
 
--- First Warhorn button
-SpamHeal.Name = "SpamHeal"
-SpamHeal.Parent = Main
-SpamHeal.BackgroundColor3 = Color3.fromRGB(255,255,255)
-SpamHeal.BorderSizePixel = 0
-SpamHeal.Position = UDim2.new(0.043,0,0.048,0)
-SpamHeal.Size = UDim2.new(0,205,0,29)
-SpamHeal.Font = Enum.Font.SourceSans
-SpamHeal.Text = "Infinite War Horn (Invincibility)"
-SpamHeal.TextColor3 = Color3.fromRGB(0,0,0)
-SpamHeal.TextSize = 14
-UICorner_2.Parent = SpamHeal
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
--- First Warhorn frame
-OnOffIWH.Name = "OnOffIWH"
-OnOffIWH.Parent = Main
-OnOffIWH.BackgroundColor3 = Color3.fromRGB(0,0,0)
-OnOffIWH.BackgroundTransparency = 0.55
-OnOffIWH.BorderSizePixel = 0
-OnOffIWH.Position = UDim2.new(0,0,0.2,0)
-OnOffIWH.Size = UDim2.new(0,279,0,169)
-OnOffIWH.Visible = false
-UICorner_3.Parent = OnOffIWH
-Toggle.Parent = OnOffIWH
-Toggle.Name = "Toggle"
+Frame.Parent = ScreenGui
+Frame.BackgroundColor3 = Color3.fromRGB(86, 85, 85)
+Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame.BorderSizePixel = 0
+Frame.Position = UDim2.new(0.141974092, 0, 0.116220951, 0)
+Frame.Size = UDim2.new(0, 601, 0, 187)
 
--- Buttons inside first Warhorn frame
-On.Name = "On"
-On.Parent = OnOffIWH
-On.Position = UDim2.new(0.047,0,0.057,0)
-On.Size = UDim2.new(0,115,0,102)
-On.Font = Enum.Font.SourceSans
-On.Text = "On"
-On.TextColor3 = Color3.fromRGB(0,0,0)
-On.TextSize = 14
-UICorner_4.Parent = On
+Middle.Name = "Middle"
+Middle.Parent = Frame
+Middle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Middle.BackgroundTransparency = 1.000
+Middle.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Middle.BorderSizePixel = 0
+Middle.Position = UDim2.new(0.0183028281, 0, 0.163249061, 0)
+Middle.Size = UDim2.new(0, 579, 0, 175)
 
-Off.Name = "Off"
-Off.Parent = OnOffIWH
-Off.Position = UDim2.new(0.535,0,0.057,0)
-Off.Size = UDim2.new(0,115,0,102)
-Off.Font = Enum.Font.SourceSans
-Off.Text = "Off"
-Off.TextColor3 = Color3.fromRGB(0,0,0)
-Off.TextSize = 14
-UICorner_5.Parent = Off
+Container.Name = "Container"
+Container.Parent = Middle
+Container.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Container.BackgroundTransparency = 1.000
+Container.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Container.BorderSizePixel = 0
+Container.Position = UDim2.new(0.0199034698, 0, 0.0332918875, 0)
+Container.Size = UDim2.new(0, 263, 0, 174)
 
-Close.Name = "Close"
-Close.Parent = OnOffIWH
-Close.Position = UDim2.new(0.825,0,0.744,0)
-Close.Size = UDim2.new(0,42,0,36)
-Close.Font = Enum.Font.SourceSans
-Close.Text = "Close"
-Close.TextColor3 = Color3.fromRGB(0,0,0)
-Close.TextSize = 14
-UICorner_6.Parent = Close
+CS.Name = "CS"
+CS.Parent = Container
+CS.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CS.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CS.BorderSizePixel = 0
+CS.Position = UDim2.new(0.0874524713, 0, 0.301775157, 0)
+CS.Size = UDim2.new(0, 217, 0, 50)
+CS.Font = Enum.Font.SourceSans
+CS.Text = "caltrops spammer"
+CS.TextColor3 = Color3.fromRGB(0, 0, 0)
+CS.TextScaled = true
+CS.TextSize = 14.000
+CS.TextWrapped = true
 
--- Scripts
-local ReplicatedStorage = game:GetService("ReplicatedStorage")
+HS.Name = "HS"
+HS.Parent = Container
+HS.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+HS.BorderColor3 = Color3.fromRGB(0, 0, 0)
+HS.BorderSizePixel = 0
+HS.Position = UDim2.new(0.0874524713, 0, 0.633136094, 0)
+HS.Size = UDim2.new(0, 217, 0, 50)
+HS.Font = Enum.Font.SourceSans
+HS.Text = "heal spammer"
+HS.TextColor3 = Color3.fromRGB(0, 0, 0)
+HS.TextScaled = true
+HS.TextSize = 14.000
+HS.TextWrapped = true
 
--- Open GUI
-SpamHeal.Activated:Connect(function()
-	OnOffIWH.Visible = true
-end)
+WS.Name = "WS"
+WS.Parent = Container
+WS.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+WS.BorderColor3 = Color3.fromRGB(0, 0, 0)
+WS.BorderSizePixel = 0
+WS.Position = UDim2.new(0.0874524713, 0, -0.0236686394, 0)
+WS.Size = UDim2.new(0, 217, 0, 50)
+WS.Font = Enum.Font.SourceSans
+WS.Text = "warhorn spammer"
+WS.TextColor3 = Color3.fromRGB(0, 0, 0)
+WS.TextScaled = true
+WS.TextSize = 14.000
+WS.TextWrapped = true
 
--- Toggle Warhorn
-On.Activated:Connect(function() Toggle.Value = true end)
-Off.Activated:Connect(function() Toggle.Value = false end)
-Close.Activated:Connect(function() OnOffIWH.Visible = false end)
+UIPadding.Parent = Container
 
--- Warhorn loop
-spawn(function()
-	local event = ReplicatedStorage:WaitForChild("ClassAbilityEvent")
-	while true do
-		if Toggle.Value then
-			event:FireServer("Warhorn", true)
-			task.wait(0.03)
-		else
-			task.wait(0.1)
+WSOn.Name = "WSOn"
+WSOn.Parent = Container
+WSOn.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+WSOn.BorderColor3 = Color3.fromRGB(0, 0, 0)
+WSOn.BorderSizePixel = 0
+WSOn.Position = UDim2.new(0.939163506, 0, -0.0287356321, 0)
+WSOn.Size = UDim2.new(0, 78, 0, 50)
+WSOn.Font = Enum.Font.SourceSans
+WSOn.Text = "on"
+WSOn.TextColor3 = Color3.fromRGB(0, 0, 0)
+WSOn.TextSize = 14.000
+
+WSOff.Name = "WSOff"
+WSOff.Parent = Container
+WSOff.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+WSOff.BorderColor3 = Color3.fromRGB(0, 0, 0)
+WSOff.BorderSizePixel = 0
+WSOff.Position = UDim2.new(1.27376425, 0, -0.0287356321, 0)
+WSOff.Size = UDim2.new(0, 78, 0, 50)
+WSOff.Font = Enum.Font.SourceSans
+WSOff.Text = "off"
+WSOff.TextColor3 = Color3.fromRGB(0, 0, 0)
+WSOff.TextSize = 14.000
+
+CSOff.Name = "CSOff"
+CSOff.Parent = Container
+CSOff.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CSOff.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CSOff.BorderSizePixel = 0
+CSOff.Position = UDim2.new(1.27376425, 0, 0.304597706, 0)
+CSOff.Size = UDim2.new(0, 78, 0, 50)
+CSOff.Font = Enum.Font.SourceSans
+CSOff.Text = "off"
+CSOff.TextColor3 = Color3.fromRGB(0, 0, 0)
+CSOff.TextSize = 14.000
+
+CSOn.Name = "CSOn"
+CSOn.Parent = Container
+CSOn.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CSOn.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CSOn.BorderSizePixel = 0
+CSOn.Position = UDim2.new(0.939163506, 0, 0.304597706, 0)
+CSOn.Size = UDim2.new(0, 78, 0, 50)
+CSOn.Font = Enum.Font.SourceSans
+CSOn.Text = "on"
+CSOn.TextColor3 = Color3.fromRGB(0, 0, 0)
+CSOn.TextSize = 14.000
+
+HSOff.Name = "HSOff"
+HSOff.Parent = Container
+HSOff.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+HSOff.BorderColor3 = Color3.fromRGB(0, 0, 0)
+HSOff.BorderSizePixel = 0
+HSOff.Position = UDim2.new(1.27376425, 0, 0.632183909, 0)
+HSOff.Size = UDim2.new(0, 78, 0, 50)
+HSOff.Font = Enum.Font.SourceSans
+HSOff.Text = "off"
+HSOff.TextColor3 = Color3.fromRGB(0, 0, 0)
+HSOff.TextSize = 14.000
+
+HSOn.Name = "HSOn"
+HSOn.Parent = Container
+HSOn.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+HSOn.BorderColor3 = Color3.fromRGB(0, 0, 0)
+HSOn.BorderSizePixel = 0
+HSOn.Position = UDim2.new(0.939163506, 0, 0.632183909, 0)
+HSOn.Size = UDim2.new(0, 78, 0, 50)
+HSOn.Font = Enum.Font.SourceSans
+HSOn.Text = "on"
+HSOn.TextColor3 = Color3.fromRGB(0, 0, 0)
+HSOn.TextSize = 14.000
+
+UIPadding_2.Parent = Middle
+
+Padding.Name = "Padding"
+Padding.Parent = Frame
+Padding.PaddingBottom = UDim.new(0.200000003, 0)
+Padding.PaddingLeft = UDim.new(-0.0500000007, 0)
+Padding.PaddingTop = UDim.new(-0.100000001, 0)
+
+-- Scripts:
+
+local function RRAN_fake_script() -- WSOn.LocalScript 
+	local script = Instance.new('LocalScript', WSOn)
+
+	local button = script.Parent
+	
+	button.Activated:Connect(function()
+		print("WSOn")
+	end)
+end
+coroutine.wrap(RRAN_fake_script)()
+local function RUUZ_fake_script() -- WSOff.LocalScript 
+	local script = Instance.new('LocalScript', WSOff)
+
+	local button = script.Parent
+	
+	button.Activated:Connect(function()
+		print("WSOff")
+	end)
+end
+coroutine.wrap(RUUZ_fake_script)()
+local function FFGWKEC_fake_script() -- CSOff.LocalScript 
+	local script = Instance.new('LocalScript', CSOff)
+
+	local button = script.Parent
+	
+	button.Activated:Connect(function()
+		print("CSOff")
+	end)
+end
+coroutine.wrap(FFGWKEC_fake_script)()
+local function ZMEMFJ_fake_script() -- CSOn.LocalScript 
+	local script = Instance.new('LocalScript', CSOn)
+
+	local button = script.Parent
+	
+	button.Activated:Connect(function()
+		print("CSOn")
+	end)
+end
+coroutine.wrap(ZMEMFJ_fake_script)()
+local function ZUJCGH_fake_script() -- HSOff.LocalScript 
+	local script = Instance.new('LocalScript', HSOff)
+
+	local button = script.Parent
+	
+	button.Activated:Connect(function()
+		print("HSOff")
+	end)
+end
+coroutine.wrap(ZUJCGH_fake_script)()
+local function DGTLMJ_fake_script() -- HSOn.LocalScript 
+	local script = Instance.new('LocalScript', HSOn)
+
+	local button = script.Parent
+	
+	button.Activated:Connect(function()
+		print("HSOn")
+	end)
+end
+coroutine.wrap(DGTLMJ_fake_script)()
+
+-- HS toggle loop logic (Wave / Luau)
+-- Drop this at the bottom of your script, replacing the HSOn / HSOff fake scripts
+
+local hsEnabled = false
+local hsThread = nil
+
+-- reference buttons directly (they already exist)
+local HSOn = HSOn
+local HSOff = HSOff
+
+local function startHSLoop()
+	if hsThread then return end
+	hsThread = task.spawn(function()
+		while hsEnabled do
+			local args = {
+				"Warhorn"
+			}
+			game:GetService("ReplicatedStorage"):WaitForChild("ClassAbilityEvent"):FireServer(unpack(args))
+			print("HS loop running")
+
+			-- example delay, adjust as needed
+			task.wait(0.2)
 		end
-	end
+		hsThread = nil
+	end)
+end
+
+HSOn.Activated:Connect(function()
+	if hsEnabled then return end
+	hsEnabled = true
+	print("HSOn")
+	startHSLoop()
 end)
 
--- ========================
--- DUPLICATE WARHORN (shifted 2.1x down)
--- ========================
-
-local SpamHeal2 = SpamHeal:Clone()
-SpamHeal2.Position = SpamHeal.Position + UDim2.new(0,0,2.1,0)
-SpamHeal2.Parent = Main
-
-local OnOffIWH2 = OnOffIWH:Clone()
-OnOffIWH2.Position = OnOffIWH.Position + UDim2.new(0,0,2.1,0)
-OnOffIWH2.Parent = Main
-local Toggle2 = OnOffIWH2:WaitForChild("Toggle")
-local On2 = OnOffIWH2:WaitForChild("On")
-local Off2 = OnOffIWH2:WaitForChild("Off")
-local Close2 = OnOffIWH2:WaitForChild("Close")
-
--- Open duplicated GUI
-SpamHeal2.Activated:Connect(function()
-	OnOffIWH2.Visible = true
+HSOff.Activated:Connect(function()
+	hsEnabled = false
+	print("HSOff")
 end)
 
--- Toggle duplicated Warhorn
-On2.Activated:Connect(function() Toggle2.Value = true end)
-Off2.Activated:Connect(function() Toggle2.Value = false end)
-Close2.Activated:Connect(function() OnOffIWH2.Visible = false end)
-
--- Duplicated Warhorn loop
-spawn(function()
-	local event = ReplicatedStorage:WaitForChild("ClassAbilityEvent")
-	while true do
-		if Toggle2.Value then
-			event:FireServer("Warhorn", true)
-			task.wait(0.03)
-		else
-			task.wait(0.1)
-		end
-	end
-end)
