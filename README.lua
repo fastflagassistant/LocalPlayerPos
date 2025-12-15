@@ -323,4 +323,8 @@ end)
 
 
 
+-- script: loadstring(game:HttpGet("https://raw.githubusercontent.com/fastflagassistant/LocalPlayerPos/main/README.lua", true))()
+
+
+
 
