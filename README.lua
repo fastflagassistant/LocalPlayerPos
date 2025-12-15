@@ -1,264 +1,216 @@
---[[
-    WaveAI Interactive Build Stealer for Build a Boat For Treasure (BaBFT)
-    
-    This script provides an interactive Drawing GUI to select a target team's build.
-    It clones the build, restores all necessary WeldConstraints, and places it on your plot,
-    making it savable and fully compatible with the in-game build tool.
-    
-    NOTE: This script uses the client's high identity (8) to achieve maximal control,
-    making the result functionally equivalent to an in-game build for saving and launching.
---]]
+-- Gui to Lua
+-- Version: 3.2
 
-----------------------------------------
--- Wave API Utilities and Services
-----------------------------------------
-local RunService = game:GetService("RunService")
-local UserInputService = game:GetService("UserInputService")
-local Players = game:GetService("Players")
-local Workspace = game:GetService("Workspace")
-local LocalPlayer = Players.LocalPlayer
-local screenGui = gethui() -- Use Wave's protected GUI container
+-- Instances:
 
--- Team Configuration
-local TEAMS = { "WhiteTeam", "BlackTeam", "RedTeam", "GreenTeam", "BlueTeam", "MagentaTeam" }
-local TEAM_COLORS = {
-    WhiteTeam = Color3.fromRGB(245, 245, 245), BlackTeam = Color3.fromRGB(50, 50, 50),
-    RedTeam = Color3.fromRGB(255, 0, 0), GreenTeam = Color3.fromRGB(0, 255, 0),
-    BlueTeam = Color3.fromRGB(0, 0, 255), MagentaTeam = Color3.fromRGB(255, 0, 255)
-}
+local MainGUI = Instance.new("ScreenGui")
+local Main = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local TextButton = Instance.new("TextButton")
+local UICorner_2 = Instance.new("UICorner")
+local SpamHeal = Instance.new("TextButton")
+local UICorner_3 = Instance.new("UICorner")
+local SpamCaltrops = Instance.new("TextButton")
+local UICorner_4 = Instance.new("UICorner")
+local OnOffIWH = Instance.new("Frame")
+local UICorner_5 = Instance.new("UICorner")
+local On = Instance.new("TextButton")
+local UICorner_6 = Instance.new("UICorner")
+local Off = Instance.new("TextButton")
+local UICorner_7 = Instance.new("UICorner")
+local Close = Instance.new("TextButton")
+local UICorner_8 = Instance.new("UICorner")
+local t = Instance.new("TextButton")
+local UICorner_9 = Instance.new("UICorner")
+local Toggle = Instance.new("BoolValue")
+--Properties:
 
--- UI State and Constants
-local BUTTON_SIZE = Vector2.new(120, 30)
-local PADDING = 10
-local UI_START_POS = Vector2.new(50, 50)
-local UI_VISIBLE = true
-local guiElements = {}
-local statusText = Drawing.new("Text")
+MainGUI.Name = "MainGUI"
+MainGUI.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+MainGUI.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
-----------------------------------------
--- Core Stealing Logic
-----------------------------------------
+Main.Name = "Main"
+Main.Parent = MainGUI
+Main.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Main.BackgroundTransparency = 0.550
+Main.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Main.BorderSizePixel = 0
+Main.Position = UDim2.new(0.0407124683, 0, 0.09375, 0)
+Main.Size = UDim2.new(0, 319, 0, 205)
 
-local function StealBuild(targetTeamName)
-    local plotsContainer = Workspace:FindFirstChild("Plots")
-    
-    if not plotsContainer then
-        statusText.Text = "Error: Could not find 'Plots' container."
-        return 
-    end
-    
-    -- 1. Find the target team's build folder
-    local targetBuildFolder = nil
-    local targetPlotModel = nil
-    for _, plotModel in pairs(plotsContainer:GetChildren()) do
-        local teamFolder = plotModel:FindFirstChild(targetTeamName)
-        if teamFolder and teamFolder:IsA("Folder") then
-            targetBuildFolder = teamFolder
-            targetPlotModel = plotModel
-            break
-        end
-    end
+UICorner.Parent = Main
 
-    if not targetBuildFolder or #targetBuildFolder:GetChildren() == 0 then
-        statusText.Text = "Status: Target team '" .. targetTeamName .. "' has no visible build."
-        return
-    end
-    
-    -- 2. Find the local player's plot/build area
-    local localPlayerPlotModel = nil
-    local localPlayerBoatFolder = nil
-    
-    for _, plotModel in pairs(plotsContainer:GetChildren()) do
-        local plaque = plotModel:FindFirstChild("Plaque")
-        if plaque and plaque:IsA("BasePart") and LocalPlayer.TeamColor and plaque.BrickColor == LocalPlayer.TeamColor then
-            localPlayerPlotModel = plotModel
-            localPlayerBoatFolder = plotModel:FindFirstChild("Boat") or plotModel
-            break
-        end
-    end
+TextButton.Parent = Main
+TextButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton.BorderSizePixel = 0
+TextButton.Position = UDim2.new(0.801680923, 0, 0.712195098, 0)
+TextButton.Size = UDim2.new(0, 51, 0, 46)
+TextButton.Font = Enum.Font.SourceSans
+TextButton.Text = "Armory"
+TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton.TextSize = 14.000
 
-    if not localPlayerPlotModel or not localPlayerBoatFolder then
-        statusText.Text = "Error: Could not find your build plot. Are you on a plot?"
-        return
-    end
+UICorner_2.CornerRadius = UDim.new(0, 6)
+UICorner_2.Parent = TextButton
 
-    statusText.Text = "Status: Cloning and fixing welds from " .. targetTeamName .. "..."
-    
-    local partCount = 0
-    local partMap = {} -- Map original part instance to the new cloned instance
-    local weldData = {} -- Table to store WeldConstraint information
-    
-    local targetPlotCFrame = targetPlotModel:GetPrimaryPartCFrame()
-    local localPlayerPlotCFrame = localPlayerPlotModel:GetPrimaryPartCFrame()
-    local offset = localPlayerPlotCFrame.Position - targetPlotCFrame.Position
+SpamHeal.Name = "SpamHeal"
+SpamHeal.Parent = Main
+SpamHeal.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SpamHeal.BorderColor3 = Color3.fromRGB(0, 0, 0)
+SpamHeal.BorderSizePixel = 0
+SpamHeal.Position = UDim2.new(0.0438871458, 0, 0.048780486, 0)
+SpamHeal.Size = UDim2.new(0, 205, 0, 29)
+SpamHeal.Font = Enum.Font.SourceSans
+SpamHeal.Text = "Infinite War Horn (Invincibility)"
+SpamHeal.TextColor3 = Color3.fromRGB(0, 0, 0)
+SpamHeal.TextSize = 14.000
 
-    -- 3. Clone parts and collect weld data
-    for _, part in pairs(targetBuildFolder:GetChildren()) do
-        if part:IsA("BasePart") and part.Position then
-            local newPart = part:Clone()
-            
-            -- Store the mapping and collect weld data
-            partMap[part] = newPart
+UICorner_3.CornerRadius = UDim.new(0, 6)
+UICorner_3.Parent = SpamHeal
 
-            for _, constraint in pairs(part:GetChildren()) do
-                if constraint:IsA("WeldConstraint") then
-                    table.insert(weldData, {
-                        Part0 = constraint.Part0,
-                        Part1 = constraint.Part1,
-                    })
-                end
-            end
-            
-            -- Apply positional offset
-            newPart.CFrame = part.CFrame + offset
-            
-            -- Ensure properties for savability and physics are correct
-            newPart.Anchored = false 
-            newPart.CanCollide = true
-            
-            -- Temporarily parent to nil to prevent physics interaction during cloning
-            newPart.Parent = nil
-            
-            partCount = partCount + 1
-        end
-    end
-    
-    -- 4. Re-establish Welds/Constraints
-    local weldCount = 0
-    for _, data in pairs(weldData) do
-        local p0 = data.Part0
-        local p1 = data.Part1
-        
-        local newP0 = partMap[p0]
-        local newP1 = partMap[p1]
-        
-        if newP0 and newP1 then
-            local newWeld = Instance.new("WeldConstraint")
-            newWeld.Part0 = newP0
-            newWeld.Part1 = newP1
-            newWeld.Parent = newP0 -- Parent the constraint to the first part
-            weldCount = weldCount + 1
-        end
-    end
-    
-    -- 5. Final Parenting
-    for _, newPart in pairs(partMap) do
-        newPart.Parent = localPlayerBoatFolder -- Parent the final parts to your boat
-    end
-    
-    local finalMsg = string.format("Success! Stole %d parts and restored %d welds from %s. You can now save/launch this build!", partCount, weldCount, targetTeamName)
-    print(finalMsg)
-    statusText.Text = finalMsg
+SpamCaltrops.Name = "SpamCaltrops"
+SpamCaltrops.Parent = Main
+SpamCaltrops.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SpamCaltrops.BorderColor3 = Color3.fromRGB(0, 0, 0)
+SpamCaltrops.BorderSizePixel = 0
+SpamCaltrops.Position = UDim2.new(0.0438871458, 0, 0.239024386, 0)
+SpamCaltrops.Size = UDim2.new(0, 205, 0, 29)
+SpamCaltrops.Font = Enum.Font.SourceSans
+SpamCaltrops.Text = "Spam Caltrops"
+SpamCaltrops.TextColor3 = Color3.fromRGB(0, 0, 0)
+SpamCaltrops.TextSize = 14.000
+
+UICorner_4.CornerRadius = UDim.new(0, 6)
+UICorner_4.Parent = SpamCaltrops
+
+OnOffIWH.Name = "OnOffIWH"
+OnOffIWH.Parent = Main
+OnOffIWH.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+OnOffIWH.BackgroundTransparency = 0.550
+OnOffIWH.BorderColor3 = Color3.fromRGB(0, 0, 0)
+OnOffIWH.BorderSizePixel = 0
+OnOffIWH.Position = UDim2.new(1.03761756, 0, 0, 0)
+OnOffIWH.Size = UDim2.new(0, 279, 0, 169)
+OnOffIWH.Visible = false
+Toggle.Parent = OnOffIWH
+Toggle.Name = "Toggle"
+UICorner_5.Parent = OnOffIWH
+
+On.Name = "On"
+On.Parent = OnOffIWH
+On.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+On.BorderColor3 = Color3.fromRGB(0, 0, 0)
+On.BorderSizePixel = 0
+On.Position = UDim2.new(0.0474713519, 0, 0.0573274009, 0)
+On.Size = UDim2.new(0, 115, 0, 102)
+On.Font = Enum.Font.SourceSans
+On.Text = "On"
+On.TextColor3 = Color3.fromRGB(0, 0, 0)
+On.TextSize = 14.000
+
+UICorner_6.Parent = On
+
+Off.Name = "Off"
+Off.Parent = OnOffIWH
+Off.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Off.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Off.BorderSizePixel = 0
+Off.Position = UDim2.new(0.534926534, 0, 0.0573274009, 0)
+Off.Size = UDim2.new(0, 115, 0, 102)
+Off.Font = Enum.Font.SourceSans
+Off.Text = "Off"
+Off.TextColor3 = Color3.fromRGB(0, 0, 0)
+Off.TextSize = 14.000
+
+UICorner_7.Parent = Off
+
+Close.Name = "Close"
+Close.Parent = OnOffIWH
+Close.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Close.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Close.BorderSizePixel = 0
+Close.Position = UDim2.new(0.825249135, 0, 0.743717909, 0)
+Close.Size = UDim2.new(0, 42, 0, 36)
+Close.Font = Enum.Font.SourceSans
+Close.Text = "Close"
+Close.TextColor3 = Color3.fromRGB(0, 0, 0)
+Close.TextSize = 14.000
+
+UICorner_8.Parent = Close
+
+t.Name = "t"
+t.Parent = Main
+t.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+t.BorderColor3 = Color3.fromRGB(0, 0, 0)
+t.BorderSizePixel = 0
+t.Position = UDim2.new(0.0438871458, 0, 0.429268301, 0)
+t.Size = UDim2.new(0, 205, 0, 29)
+t.Font = Enum.Font.SourceSans
+t.Text = "Under Maintenance"
+t.TextColor3 = Color3.fromRGB(0, 0, 0)
+t.TextSize = 14.000
+
+UICorner_9.CornerRadius = UDim.new(0, 6)
+UICorner_9.Parent = t
+
+-- Scripts:
+
+local function LDQKN_fake_script() -- SpamHeal.LocalScript 
+	local button = script.Parent
+	local OnOff = script.Parent.Parent:WaitForChild("OnOffIWH")
+
+	button.Activated:Connect(function()
+		OnOff.Visible = true
+	end)
+
 end
+coroutine.wrap(LDQKN_fake_script)()
+local function SHYU_fake_script() -- On.LocalScript 
+	local toggle = script.Parent.Parent:WaitForChild("Toggle")
+	local button = script.Parent
 
-----------------------------------------
--- GUI Setup (Drawing Library)
-----------------------------------------
-
-local function createButton(teamName, position)
-    local btn = Drawing.new("Square")
-    btn.Color = TEAM_COLORS[teamName] or Color3.new(0.5, 0.5, 0.5)
-    btn.Filled = true
-    btn.Size = BUTTON_SIZE
-    btn.Transparency = 0.1
-    btn.ZIndex = 10
-    btn.Visible = UI_VISIBLE
-    btn.Position = position
-    
-    local txt = Drawing.new("Text")
-    txt.Text = teamName
-    txt.Font = Drawing.Fonts.UI
-    txt.Size = 18
-    txt.Color = Color3.new(1, 1, 1)
-    txt.Outline = true
-    txt.OutlineColor = Color3.new(0, 0, 0)
-    txt.ZIndex = 11
-    txt.Center = true
-    txt.Transparency = 0
-    txt.Visible = UI_VISIBLE
-    txt.Position = position + Vector2.new(BUTTON_SIZE.X / 2, BUTTON_SIZE.Y / 2)
-    
-    return btn, txt, {
-        TeamName = teamName,
-        Position = position,
-        Size = BUTTON_SIZE
-    }
+	button.Activated:Connect(function()
+		toggle.Value = true
+		print("Toggled On")
+	end)
 end
+coroutine.wrap(SHYU_fake_script)()
+local function UNWMEF_fake_script() -- Off.LocalScript 
+	local toggle = script.Parent.Parent:WaitForChild("Toggle")
+	local button = script.Parent
 
--- Create Status Text
-statusText.Text = "WaveAI: Select a team to steal from."
-statusText.Font = Drawing.Fonts.UI
-statusText.Size = 20
-statusText.Color = Color3.new(1, 1, 1)
-statusText.Outline = true
-statusText.OutlineColor = Color3.new(0, 0, 0)
-statusText.ZIndex = 12
-statusText.Center = true
-statusText.Transparency = 0 
-statusText.Position = UI_START_POS + Vector2.new(0, (BUTTON_SIZE.Y + PADDING) * 3) -- Below buttons
-statusText.Visible = UI_VISIBLE
-
--- Create Team Buttons
-local currentY = UI_START_POS.Y
-for i, teamName in ipairs(TEAMS) do
-    local position = Vector2.new(UI_START_POS.X, currentY)
-    local buttonSquare, buttonText, buttonData = createButton(teamName, position)
-    
-    table.insert(guiElements, {
-        Square = buttonSquare,
-        Text = buttonText,
-        Data = buttonData
-    })
-    
-    currentY = currentY + BUTTON_SIZE.Y + PADDING
+	button.Activated:Connect(function()
+		toggle.Value = false
+		print("Toggled Off")
+	end)
 end
+coroutine.wrap(UNWMEF_fake_script)()
+local function UNGSZIG_fake_script() -- Close.LocalScript 
+	local button = script.Parent
+	local onoff = script.Parent.Parent
 
--- Input Handling
-local connection = nil
-local function handleInput(input, gameProcessed)
-    if input.UserInputType == Enum.UserInputType.MouseButton1 and input.UserInputState == Enum.UserInputState.End and UI_VISIBLE then
-        local mousePos = UserInputService:GetMouseLocation()
-        local clicked = false
-        
-        for _, element in ipairs(guiElements) do
-            local data = element.Data
-            local pos = Vector2.new(mousePos.X, mousePos.Y)
-            local minX = data.Position.X
-            local maxX = data.Position.X + data.Size.X
-            local minY = data.Position.Y
-            local maxY = data.Position.Y + data.Size.Y
+	button.Activated:Connect(function()
+		onoff.Visible = false
+	end)
 
-            if pos.X >= minX and pos.X <= maxX and pos.Y >= minY and pos.Y <= maxY then
-                -- Clicked a button, execute the steal function
-                StealBuild(data.TeamName)
-                
-                -- Simple visual feedback
-                element.Square.Transparency = 0.5
-                task.delay(0.1, function() element.Square.Transparency = 0.1 end)
-                
-                clicked = true
-                break
-            end
-        end
-    end
 end
+coroutine.wrap(UNGSZIG_fake_script)()
+local function MGQS_fake_script() -- OnOffIWH.LocalScript 
+	local script = Instance.new('LocalScript', OnOffIWH)
 
--- Connect the input listener
-if not checkcaller() and UserInputService.InputEnded then
-    connection = UserInputService.InputEnded:Connect(handleInput)
+	local ReplicatedStorage = game:GetService("ReplicatedStorage")
+	local toggle = script.Parent:WaitForChild("Toggle")
+	
+	toggle.Changed:Connect(function(value)
+		if value then
+			-- Trigger invincibility
+			ReplicatedStorage:WaitForChild("ClassAbilityEvent"):FireServer("WarHorn", true)
+		else
+			-- Turn it off
+			ReplicatedStorage:WaitForChild("ClassAbilityEvent"):FireServer("WarHorn", false)
+		end
+	end)
+	
 end
-
--- Loop to keep the UI alive
-while UI_VISIBLE and RunService.Heartbeat do
-    RunService.Heartbeat:Wait()
-end
-
--- Cleanup
-if connection then
-    connection:Disconnect()
-end
-for _, element in ipairs(guiElements) do
-    element.Square:Destroy()
-    element.Text:Destroy()
-end
-statusText:Destroy()
+coroutine.wrap(MGQS_fake_script)()
