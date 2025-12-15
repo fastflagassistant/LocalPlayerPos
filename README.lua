@@ -287,12 +287,12 @@ CSOff.MouseButton1Click:Connect(function()
 	csEnabled = false
 	print("CS OFF")
 end)
-
--- === HS (MEDIC / HEAL) TOGGLE LOOP ===
+-- === DELTA / EXECUTOR SAFE HS TOGGLE LOOP ===
 
 local hsEnabled = false
 local hsThread
 
+-- IMPORTANT: use MouseButton1Click, not Activated
 HSOn.MouseButton1Click:Connect(function()
 	if hsEnabled then return end
 	hsEnabled = true
@@ -300,11 +300,18 @@ HSOn.MouseButton1Click:Connect(function()
 
 	hsThread = task.spawn(function()
 		while hsEnabled do
-			game:GetService("ReplicatedStorage")
-				:WaitForChild("ClassAbilityEvent")
-				:FireServer("Medic")
+			-- 🔁 PUT YOUR HEAL SPAM CODE HERE 🔁
+			print("SPAMMING HEAL")
+					local args = {
+	"Medic"
+}
+game:GetService("ReplicatedStorage"):WaitForChild("ClassAbilityEvent"):FireServer(unpack(args))
 
-			task.wait(0.03) -- adjust if needed
+
+			-- example:
+			-- game:GetService("ReplicatedStorage").HealRemote:FireServer()
+
+			task.wait(0.2)
 		end
 	end)
 end)
