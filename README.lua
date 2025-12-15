@@ -270,3 +270,35 @@ HSOff.MouseButton1Click:Connect(function()
 	print("HS OFF")
 end)
 
+-- === CS (CALTROPS) TOGGLE LOOP ===
+
+local csEnabled = false
+local csThread
+
+CSOn.MouseButton1Click:Connect(function()
+	if csEnabled then return end
+	csEnabled = true
+	print("CS ON")
+
+	csThread = task.spawn(function()
+		while csEnabled do
+			                local args = {
+	              "Caltrops"
+}
+game:GetService("ReplicatedStorage"):WaitForChild("ClassAbilityEvent"):FireServer(unpack(args))
+			print("SPAMMING CALTROPS")
+
+			-- example:
+			-- game:GetService("ReplicatedStorage").CaltropsRemote:FireServer()
+
+			task.wait(0.03)
+		end
+	end)
+end)
+
+CSOff.MouseButton1Click:Connect(function()
+	csEnabled = false
+	print("CS OFF")
+end)
+
+
