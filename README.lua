@@ -1,7 +1,8 @@
--- Single LocalScript GUI for Warhorn + SpamCaltrops
+-- Single LocalScript GUI for looping Warhorn + SpamCaltrops
 
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local RunService = game:GetService("RunService")
 local player = Players.LocalPlayer
 local playerGui = player:WaitForChild("PlayerGui")
 
@@ -19,10 +20,9 @@ Main.BackgroundTransparency = 0.55
 Main.BorderSizePixel = 0
 Main.Position = UDim2.new(0.04,0,0.09,0)
 Main.Size = UDim2.new(0,319,0,205)
-
 local UICorner = Instance.new("UICorner", Main)
 
--- Buttons
+-- Helper to create buttons
 local function createButton(parent, name, pos, size, text)
     local btn = Instance.new("TextButton")
     btn.Name = name
@@ -71,23 +71,29 @@ end)
 
 OnBtn.Activated:Connect(function()
     Toggle.Value = true
-    print("Toggled On")
+    print("Warhorn loop ON")
 end)
 
 OffBtn.Activated:Connect(function()
     Toggle.Value = false
-    print("Toggled Off")
+    print("Warhorn loop OFF")
 end)
 
 CloseBtn.Activated:Connect(function()
     OnOffIWH.Visible = false
 end)
 
--- Warhorn toggle logic
-Toggle.Changed:Connect(function(value)
-    if value then
-        ReplicatedStorage:WaitForChild("ClassAbilityEvent"):FireServer("Warhorn", true)
-    else
-        ReplicatedStorage:WaitForChild("ClassAbilityEvent"):FireServer("Warhorn", false)
+-- Infinite Warhorn loop
+local warhornEvent = ReplicatedStorage:WaitForChild("ClassAbilityEvent")
+
+spawn(function()
+    while true do
+        RunService.RenderStepped:Wait() -- small wait to prevent locking
+        if Toggle.Value then
+            warhornEvent:FireServer("Warhorn", true)
+            task.wait(0.03) -- fires every 0.03 seconds
+        else
+            task.wait(0.1)
+        end
     end
 end)
