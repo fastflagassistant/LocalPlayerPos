@@ -236,9 +236,6 @@ local function DGTLMJ_fake_script() -- HSOn.LocalScript
 	end)
 end
 coroutine.wrap(DGTLMJ_fake_script)()
-
--- === DELTA / EXECUTOR SAFE HS TOGGLE LOOP ===
-
 -- === WS (WARHORN) TOGGLE LOOP ===
 
 local wsEnabled = false
