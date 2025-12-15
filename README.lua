@@ -248,13 +248,11 @@ WSOn.MouseButton1Click:Connect(function()
 
 	wsThread = task.spawn(function()
 		while wsEnabled do
-			-- 🔁 PUT YOUR WARHORN SPAM CODE HERE 🔁
-			print("SPAMMING WARHORN")
+			game:GetService("ReplicatedStorage")
+				:WaitForChild("ClassAbilityEvent")
+				:FireServer("Warhorn")
 
-			-- example:
-			-- game:GetService("ReplicatedStorage").WarhornRemote:FireServer()
-
-			task.wait(0.25)
+			task.wait(0.03)
 		end
 	end)
 end)
@@ -263,7 +261,6 @@ WSOff.MouseButton1Click:Connect(function()
 	wsEnabled = false
 	print("WS OFF")
 end)
-
 
 -- === CS (CALTROPS) TOGGLE LOOP ===
 
@@ -277,14 +274,9 @@ CSOn.MouseButton1Click:Connect(function()
 
 	csThread = task.spawn(function()
 		while csEnabled do
-			                local args = {
-	              "Caltrops"
-}
-game:GetService("ReplicatedStorage"):WaitForChild("ClassAbilityEvent"):FireServer(unpack(args))
-			print("SPAMMING CALTROPS")
-
-			-- example:
-			-- game:GetService("ReplicatedStorage").CaltropsRemote:FireServer()
+			game:GetService("ReplicatedStorage")
+				:WaitForChild("ClassAbilityEvent")
+				:FireServer("Caltrops")
 
 			task.wait(0.03)
 		end
