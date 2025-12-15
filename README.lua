@@ -205,10 +205,10 @@ local function MGQS_fake_script() -- OnOffIWH.LocalScript
 	toggle.Changed:Connect(function(value)
 		if value then
 			-- Trigger invincibility
-			ReplicatedStorage:WaitForChild("ClassAbilityEvent"):FireServer("WarHorn", true)
+			ReplicatedStorage:WaitForChild("ClassAbilityEvent"):FireServer("Warhorn", true)
 		else
 			-- Turn it off
-			ReplicatedStorage:WaitForChild("ClassAbilityEvent"):FireServer("WarHorn", false)
+			ReplicatedStorage:WaitForChild("ClassAbilityEvent"):FireServer("Warhorn", false)
 		end
 	end)
 	
