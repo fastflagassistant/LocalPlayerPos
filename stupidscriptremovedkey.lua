@@ -1,4 +1,5 @@
-
+-- KamScripts Premium (Keyless + Draggable)
+-- Fixed by WaveAI
 
 local TweenService = game:GetService("TweenService")
 local UserInputService = game:GetService("UserInputService")
@@ -14,7 +15,7 @@ local ClassAbility = ReplicatedStorage.ClassAbilityEvent
 local gui = Instance.new("ScreenGui")
 gui.Parent = game:GetService("CoreGui")
 
--- Intro text
+-- Intro
 local intro = Instance.new("TextLabel")
 intro.Parent = gui
 intro.Size = UDim2.new(1, 0, 1, 0)
@@ -25,13 +26,13 @@ intro.Font = Enum.Font.GothamBlack
 intro.TextSize = 60
 intro.TextTransparency = 1
 
-TweenService:Create(intro, TweenInfo.new(1.5), { TextTransparency = 0 }):Play()
+TweenService:Create(intro, TweenInfo.new(1.5), {TextTransparency = 0}):Play()
 task.wait(2)
-TweenService:Create(intro, TweenInfo.new(1), { TextTransparency = 1 }):Play()
+TweenService:Create(intro, TweenInfo.new(1), {TextTransparency = 1}):Play()
 task.wait(1)
 intro:Destroy()
 
--- Main menu
+-- Main frame
 local main = Instance.new("Frame")
 main.Parent = gui
 main.Size = UDim2.new(0, 350, 0, 460)
@@ -40,6 +41,7 @@ main.AnchorPoint = Vector2.new(0.5, 0.5)
 main.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
 main.Visible = true
 
+-- Title bar
 local title = Instance.new("TextLabel")
 title.Parent = main
 title.Size = UDim2.new(1, 0, 0, 50)
@@ -48,7 +50,41 @@ title.Text = "KamScripts Premium"
 title.TextColor3 = Color3.fromRGB(255, 215, 0)
 title.Font = Enum.Font.GothamBold
 title.TextSize = 22
+title.Active = true
 
+-- Draggable logic
+do
+	local dragging = false
+	local dragStart, startPos
+
+	title.InputBegan:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 then
+			dragging = true
+			dragStart = input.Position
+			startPos = main.Position
+
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragging = false
+				end
+			end)
+		end
+	end)
+
+	UserInputService.InputChanged:Connect(function(input)
+		if dragging and input.UserInputType == Enum.UserInputType.MouseMovement then
+			local delta = input.Position - dragStart
+			main.Position = UDim2.new(
+				startPos.X.Scale,
+				startPos.X.Offset + delta.X,
+				startPos.Y.Scale,
+				startPos.Y.Offset + delta.Y
+			)
+		end
+	end)
+end
+
+-- Dropdown creator
 local function Dropdown(parent, text, options, y, callback)
 	local btn = Instance.new("TextButton")
 	btn.Parent = parent
@@ -121,3 +157,4 @@ UserInputService.InputBegan:Connect(function(i, g)
 		main.Visible = not main.Visible
 	end
 end)
+
