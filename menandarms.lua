@@ -7,7 +7,7 @@
  Y888P  ~Y8888P' Y888888P      888888D      Y88888P ~Y8888P' YP   YP  CONVERTER 
 ]=]
 
--- Instances: 52 | Scripts: 12 | Modules: 0 | Tags: 0
+-- Instances: 62 | Scripts: 17 | Modules: 0 | Tags: 0
 local G2L = {};
 
 -- StarterGui.MainHUD
@@ -440,6 +440,7 @@ G2L["29"] = Instance.new("ScrollingFrame", G2L["27"]);
 G2L["29"]["Active"] = true;
 G2L["29"]["BorderSizePixel"] = 0;
 G2L["29"]["CanvasSize"] = UDim2.new(0, 0, 25, 0);
+G2L["29"]["CanvasPosition"] = Vector2.new(0, 130);
 G2L["29"]["Name"] = [[MainFunctions]];
 G2L["29"]["BackgroundColor3"] = Color3.fromRGB(203, 203, 203);
 G2L["29"]["AutomaticCanvasSize"] = Enum.AutomaticSize.Y;
@@ -523,28 +524,123 @@ G2L["31"] = Instance.new("LocalScript", G2L["30"]);
 
 
 
--- StarterGui.MainHUD.Draggable.ArmoryTab.close
-G2L["32"] = Instance.new("TextButton", G2L["27"]);
-G2L["32"]["TextWrapped"] = true;
+-- StarterGui.MainHUD.Draggable.ArmoryTab.MainFunctions.Container.four
+G2L["32"] = Instance.new("TextButton", G2L["2b"]);
 G2L["32"]["BorderSizePixel"] = 0;
 G2L["32"]["TextSize"] = 14;
-G2L["32"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["32"]["BackgroundColor3"] = Color3.fromRGB(81, 81, 81);
+G2L["32"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["32"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["32"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["32"]["Size"] = UDim2.new(0, 49, 0, 19);
+G2L["32"]["Size"] = UDim2.new(0, 146, 0, 50);
 G2L["32"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["32"]["Text"] = [[close]];
-G2L["32"]["Name"] = [[close]];
-G2L["32"]["Position"] = UDim2.new(0.65221, 0, 0.14815, 0);
+G2L["32"]["Text"] = [[Brigadine3]];
+G2L["32"]["Name"] = [[four]];
+G2L["32"]["Position"] = UDim2.new(-0.30241, 0, 0.24815, 0);
 
 
--- StarterGui.MainHUD.Draggable.ArmoryTab.close.LocalScript
+-- StarterGui.MainHUD.Draggable.ArmoryTab.MainFunctions.Container.four.LocalScript
 G2L["33"] = Instance.new("LocalScript", G2L["32"]);
 
 
 
+-- StarterGui.MainHUD.Draggable.ArmoryTab.MainFunctions.Container.five
+G2L["34"] = Instance.new("TextButton", G2L["2b"]);
+G2L["34"]["BorderSizePixel"] = 0;
+G2L["34"]["TextSize"] = 14;
+G2L["34"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["34"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["34"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["34"]["Size"] = UDim2.new(0, 146, 0, 50);
+G2L["34"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["34"]["Text"] = [[Brigadine4]];
+G2L["34"]["Name"] = [[five]];
+G2L["34"]["Position"] = UDim2.new(-0.30241, 0, 0.73815, 0);
+
+
+-- StarterGui.MainHUD.Draggable.ArmoryTab.MainFunctions.Container.five.LocalScript
+G2L["35"] = Instance.new("LocalScript", G2L["34"]);
+
+
+
+-- StarterGui.MainHUD.Draggable.ArmoryTab.MainFunctions.Container.six
+G2L["36"] = Instance.new("TextButton", G2L["2b"]);
+G2L["36"]["BorderSizePixel"] = 0;
+G2L["36"]["TextSize"] = 14;
+G2L["36"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["36"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["36"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["36"]["Size"] = UDim2.new(0, 146, 0, 50);
+G2L["36"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["36"]["Text"] = [[Commoner]];
+G2L["36"]["Name"] = [[six]];
+G2L["36"]["Position"] = UDim2.new(-0.30241, 0, 1.23815, 0);
+
+
+-- StarterGui.MainHUD.Draggable.ArmoryTab.MainFunctions.Container.six.LocalScript
+G2L["37"] = Instance.new("LocalScript", G2L["36"]);
+
+
+
+-- StarterGui.MainHUD.Draggable.ArmoryTab.MainFunctions.Container.seven
+G2L["38"] = Instance.new("TextButton", G2L["2b"]);
+G2L["38"]["BorderSizePixel"] = 0;
+G2L["38"]["TextSize"] = 14;
+G2L["38"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["38"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["38"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["38"]["Size"] = UDim2.new(0, 146, 0, 50);
+G2L["38"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["38"]["Text"] = [[Crossbowman]];
+G2L["38"]["Name"] = [[seven]];
+G2L["38"]["Position"] = UDim2.new(-0.30241, 0, 1.73815, 0);
+
+
+-- StarterGui.MainHUD.Draggable.ArmoryTab.MainFunctions.Container.seven.LocalScript
+G2L["39"] = Instance.new("LocalScript", G2L["38"]);
+
+
+
+-- StarterGui.MainHUD.Draggable.ArmoryTab.MainFunctions.Container.eight
+G2L["3a"] = Instance.new("TextButton", G2L["2b"]);
+G2L["3a"]["BorderSizePixel"] = 0;
+G2L["3a"]["TextSize"] = 14;
+G2L["3a"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["3a"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["3a"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["3a"]["Size"] = UDim2.new(0, 146, 0, 50);
+G2L["3a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["3a"]["Text"] = [[Decorated]];
+G2L["3a"]["Name"] = [[eight]];
+G2L["3a"]["Position"] = UDim2.new(-0.30241, 0, 2.23815, 0);
+
+
+-- StarterGui.MainHUD.Draggable.ArmoryTab.MainFunctions.Container.eight.LocalScript
+G2L["3b"] = Instance.new("LocalScript", G2L["3a"]);
+
+
+
+-- StarterGui.MainHUD.Draggable.ArmoryTab.close
+G2L["3c"] = Instance.new("TextButton", G2L["27"]);
+G2L["3c"]["TextWrapped"] = true;
+G2L["3c"]["BorderSizePixel"] = 0;
+G2L["3c"]["TextSize"] = 14;
+G2L["3c"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["3c"]["BackgroundColor3"] = Color3.fromRGB(81, 81, 81);
+G2L["3c"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["3c"]["Size"] = UDim2.new(0, 49, 0, 19);
+G2L["3c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["3c"]["Text"] = [[close]];
+G2L["3c"]["Name"] = [[close]];
+G2L["3c"]["Position"] = UDim2.new(0.65221, 0, 0.14815, 0);
+
+
+-- StarterGui.MainHUD.Draggable.ArmoryTab.close.LocalScript
+G2L["3d"] = Instance.new("LocalScript", G2L["3c"]);
+
+
+
 -- StarterGui.MainHUD.Draggable.UIDragDetector
-G2L["34"] = Instance.new("UIDragDetector", G2L["2"]);
+G2L["3e"] = Instance.new("UIDragDetector", G2L["2"]);
 
 
 
@@ -768,9 +864,79 @@ local script = G2L["31"];
 	end)
 end;
 task.spawn(C_31);
--- StarterGui.MainHUD.Draggable.ArmoryTab.close.LocalScript
+-- StarterGui.MainHUD.Draggable.ArmoryTab.MainFunctions.Container.four.LocalScript
 local function C_33()
 local script = G2L["33"];
+	local button = script.Parent
+	
+	button.Activated:Connect(function()
+		local args = {
+			"Brigadine3",
+			150
+		}
+		game:GetService("ReplicatedStorage"):WaitForChild("CustomizeSystemRemotes"):WaitForChild("SelectArmor"):FireServer(unpack(args))
+	end)
+end;
+task.spawn(C_33);
+-- StarterGui.MainHUD.Draggable.ArmoryTab.MainFunctions.Container.five.LocalScript
+local function C_35()
+local script = G2L["35"];
+	local button = script.Parent
+	
+	button.Activated:Connect(function()
+		local args = {
+			"Brigadine4",
+			150
+		}
+		game:GetService("ReplicatedStorage"):WaitForChild("CustomizeSystemRemotes"):WaitForChild("SelectArmor"):FireServer(unpack(args))
+	end)
+end;
+task.spawn(C_35);
+-- StarterGui.MainHUD.Draggable.ArmoryTab.MainFunctions.Container.six.LocalScript
+local function C_37()
+local script = G2L["37"];
+	local button = script.Parent
+	
+	button.Activated:Connect(function()
+		local args = {
+			"Commoner",
+			150
+		}
+		game:GetService("ReplicatedStorage"):WaitForChild("CustomizeSystemRemotes"):WaitForChild("SelectArmor"):FireServer(unpack(args))
+	end)
+end;
+task.spawn(C_37);
+-- StarterGui.MainHUD.Draggable.ArmoryTab.MainFunctions.Container.seven.LocalScript
+local function C_39()
+local script = G2L["39"];
+	local button = script.Parent
+	
+	button.Activated:Connect(function()
+		local args = {
+			"Crossbowman",
+			150
+		}
+		game:GetService("ReplicatedStorage"):WaitForChild("CustomizeSystemRemotes"):WaitForChild("SelectArmor"):FireServer(unpack(args))
+	end)
+end;
+task.spawn(C_39);
+-- StarterGui.MainHUD.Draggable.ArmoryTab.MainFunctions.Container.eight.LocalScript
+local function C_3b()
+local script = G2L["3b"];
+	local button = script.Parent
+	
+	button.Activated:Connect(function()
+		local args = {
+			"Decorated",
+			150
+		}
+		game:GetService("ReplicatedStorage"):WaitForChild("CustomizeSystemRemotes"):WaitForChild("SelectArmor"):FireServer(unpack(args))
+	end)
+end;
+task.spawn(C_3b);
+-- StarterGui.MainHUD.Draggable.ArmoryTab.close.LocalScript
+local function C_3d()
+local script = G2L["3d"];
 	local button = script.Parent
 	local screengui = script.Parent.Parent
 	
@@ -778,6 +944,6 @@ local script = G2L["33"];
 		screengui.Visible = false
 	end)
 end;
-task.spawn(C_33);
+task.spawn(C_3d);
 
 return G2L["1"], require;
