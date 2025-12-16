@@ -14,6 +14,7 @@ local G2L = {};
 G2L["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
 G2L["1"]["Name"] = [[MainHUD]];
 G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
+G2L["1"]["ResetOnSpawn"] = false;
 
 
 -- StarterGui.MainHUD.Draggable
@@ -83,7 +84,6 @@ G2L["8"] = Instance.new("ScrollingFrame", G2L["2"]);
 G2L["8"]["Active"] = true;
 G2L["8"]["BorderSizePixel"] = 0;
 G2L["8"]["CanvasSize"] = UDim2.new(0, 0, 25, 0);
-G2L["8"]["CanvasPosition"] = Vector2.new(0, 178.99997);
 G2L["8"]["Name"] = [[MainFunctions]];
 G2L["8"]["BackgroundColor3"] = Color3.fromRGB(203, 203, 203);
 G2L["8"]["AutomaticCanvasSize"] = Enum.AutomaticSize.Y;
@@ -421,6 +421,7 @@ G2L["26"]["Position"] = UDim2.new(0.03795, 0, 0.36566, 0);
 
 -- StarterGui.MainHUD.Draggable.ArmoryTab
 G2L["27"] = Instance.new("Frame", G2L["2"]);
+G2L["27"]["Visible"] = false;
 G2L["27"]["ZIndex"] = 4;
 G2L["27"]["BorderSizePixel"] = 0;
 G2L["27"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
