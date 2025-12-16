@@ -7,7 +7,7 @@
  Y888P  ~Y8888P' Y888888P      888888D      Y88888P ~Y8888P' YP   YP  CONVERTER 
 ]=]
 
--- Instances: 51 | Scripts: 12 | Modules: 0 | Tags: 0
+-- Instances: 52 | Scripts: 12 | Modules: 0 | Tags: 0
 local G2L = {};
 
 -- StarterGui.MainHUD
@@ -421,7 +421,6 @@ G2L["26"]["Position"] = UDim2.new(0.03795, 0, 0.36566, 0);
 
 -- StarterGui.MainHUD.Draggable.ArmoryTab
 G2L["27"] = Instance.new("Frame", G2L["2"]);
-G2L["27"]["Visible"] = false;
 G2L["27"]["ZIndex"] = 4;
 G2L["27"]["BorderSizePixel"] = 0;
 G2L["27"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
@@ -541,6 +540,11 @@ G2L["32"]["Position"] = UDim2.new(0.65221, 0, 0.14815, 0);
 
 -- StarterGui.MainHUD.Draggable.ArmoryTab.close.LocalScript
 G2L["33"] = Instance.new("LocalScript", G2L["32"]);
+
+
+
+-- StarterGui.MainHUD.Draggable.UIDragDetector
+G2L["34"] = Instance.new("UIDragDetector", G2L["2"]);
 
 
 
