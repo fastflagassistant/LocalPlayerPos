@@ -843,7 +843,7 @@ local script = G2L["2f"];
 	
 	button.Activated:Connect(function()
 		local args = {
-			"Brigadine",
+			"Brigadine1",
 			150
 		}
 		game:GetService("ReplicatedStorage"):WaitForChild("CustomizeSystemRemotes"):WaitForChild("SelectArmor"):FireServer(unpack(args))
