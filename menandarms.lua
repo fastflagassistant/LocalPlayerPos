@@ -421,7 +421,6 @@ G2L["26"]["Position"] = UDim2.new(0.03795, 0, 0.36566, 0);
 
 -- StarterGui.MainHUD.Draggable.ArmoryTab
 G2L["27"] = Instance.new("Frame", G2L["2"]);
-G2L["27"]["Visible"] = false;
 G2L["27"]["ZIndex"] = 4;
 G2L["27"]["BorderSizePixel"] = 0;
 G2L["27"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
