@@ -21,13 +21,13 @@ local On_2 = Instance.new("TextButton")
 local TextLabel = Instance.new("TextLabel")
 local firepot = Instance.new("Frame")
 local singular_2 = Instance.new("Frame")
-local Spawn1 = Instance.new("TextButton")
+local Spawn = Instance.new("TextButton")
 local TextLabel_2 = Instance.new("TextLabel")
 local medkit = Instance.new("Frame")
 local singular_3 = Instance.new("Frame")
 local Spawn_2 = Instance.new("TextButton")
 local TextLabel_3 = Instance.new("TextLabel")
-local DragDetect = Instance.new("UIDragDetector")
+
 --Properties:
 
 MainHUD.Name = "MainHUD"
@@ -47,7 +47,7 @@ Frame.Parent = Draggable
 Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Frame.BorderSizePixel = 0
-Frame.Position = UDim2.new(-0.971759677, 0, -0.123067684, 0)
+Frame.Position = UDim2.new(-0.925248027, 0, -1.80488586, 0)
 Frame.Size = UDim2.new(0, 322, 0, 27)
 Frame.ZIndex = 4
 
@@ -96,8 +96,9 @@ MainFunctions.Active = true
 MainFunctions.BackgroundColor3 = Color3.fromRGB(202, 202, 202)
 MainFunctions.BorderColor3 = Color3.fromRGB(0, 0, 0)
 MainFunctions.BorderSizePixel = 0
-MainFunctions.Position = UDim2.new(-0.945556164, 0, 0.957113087, 0)
-MainFunctions.Size = UDim2.new(0, 314, 0, 370)
+MainFunctions.Position = UDim2.new(-0.899679959, 0, -0.596306562, 0)
+MainFunctions.Size = UDim2.new(0, 314, 0, 371)
+MainFunctions.CanvasSize = UDim2.new(0, 0, 19, 0)
 
 UIListLayout.Parent = MainFunctions
 UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
@@ -202,17 +203,17 @@ singular_2.BorderSizePixel = 0
 singular_2.Position = UDim2.new(1.18072283, 0, 0.272727281, 0)
 singular_2.Size = UDim2.new(0, 175, 0, 45)
 
-Spawn1.Name = "Spawn"
-Spawn1.Parent = singular_2
-Spawn1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Spawn1.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Spawn1.BorderSizePixel = 0
-Spawn1.Position = UDim2.new(0.068571426, 0, 0.13333334, 0)
-Spawn1.Size = UDim2.new(0, 152, 0, 33)
-Spawn1.Font = Enum.Font.SourceSans
-Spawn1.Text = "Spawn"
-Spawn1.TextColor3 = Color3.fromRGB(0, 0, 0)
-Spawn1.TextSize = 14.000
+Spawn.Name = "Spawn"
+Spawn.Parent = singular_2
+Spawn.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Spawn.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Spawn.BorderSizePixel = 0
+Spawn.Position = UDim2.new(0.068571426, 0, 0.13333334, 0)
+Spawn.Size = UDim2.new(0, 152, 0, 33)
+Spawn.Font = Enum.Font.SourceSans
+Spawn.Text = "Spawn"
+Spawn.TextColor3 = Color3.fromRGB(0, 0, 0)
+Spawn.TextSize = 14.000
 
 TextLabel_2.Parent = firepot
 TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -270,12 +271,9 @@ TextLabel_3.TextScaled = true
 TextLabel_3.TextSize = 7.000
 TextLabel_3.TextWrapped = true
 
-DragDetect.Parent = Draggable
-DragDetect.Name = "DragDetect"
-
 -- Scripts:
 
-local function CMQSSWD_fake_script() -- close.LocalScript 
+local function SDDP_fake_script() -- close.LocalScript 
 	local script = Instance.new('LocalScript', close)
 
 	local button = script.Parent
@@ -287,28 +285,28 @@ local function CMQSSWD_fake_script() -- close.LocalScript
 		gui:Destroy()
 	end)
 end
-coroutine.wrap(CMQSSWD_fake_script)()
-local function GKDIJP_fake_script() -- minimize.LocalScript 
+coroutine.wrap(SDDP_fake_script)()
+local function UBVZ_fake_script() -- minimize.LocalScript 
 	local script = Instance.new('LocalScript', minimize)
 
 	local button = script.Parent
-	local frame = script.Parent.Parent.Parent:WaitForChild("MainFunctions")
+	local gui = script.Parent.Parent.Parent:WaitForChild("MainFunctions")
 	button.Activated:Connect(function()
 		frame.Visible = false
 	end)
 end
-coroutine.wrap(GKDIJP_fake_script)()
-local function CKMHXIQ_fake_script() -- unminimize.LocalScript 
+coroutine.wrap(UBVZ_fake_script)()
+local function IIQETEV_fake_script() -- unminimize.LocalScript 
 	local script = Instance.new('LocalScript', unminimize)
 
 	local button = script.Parent
-	local frame = script.Parent.Parent.Parent:WaitForChild("MainFunctions")
+	local gui = script.Parent.Parent.Parent:WaitForChild("MainFunctions")
 	button.Activated:Connect(function()
 		frame.Visible = true
 	end)
 end
-coroutine.wrap(CKMHXIQ_fake_script)()
-local function LVGMK_fake_script() -- On.LocalScript 
+coroutine.wrap(IIQETEV_fake_script)()
+local function CAOSAL_fake_script() -- On.LocalScript 
 	local script = Instance.new('LocalScript', On)
 
 	local hsEnabled = false
@@ -345,8 +343,8 @@ local function LVGMK_fake_script() -- On.LocalScript
 		print("HS OFF")
 	end)
 end
-coroutine.wrap(LVGMK_fake_script)()
-local function RMIFAX_fake_script() -- On_2.LocalScript 
+coroutine.wrap(CAOSAL_fake_script)()
+local function CTBKCG_fake_script() -- On_2.LocalScript 
 	local script = Instance.new('LocalScript', On_2)
 
 	local button = script.Parent
@@ -365,9 +363,9 @@ local function RMIFAX_fake_script() -- On_2.LocalScript
 	
 	
 end
-coroutine.wrap(RMIFAX_fake_script)()
-local function TJFP_fake_script() -- Spawn.LocalScript 
-	local script = Instance.new('LocalScript', Spawn1)
+coroutine.wrap(CTBKCG_fake_script)()
+local function FMIY_fake_script() -- Spawn.LocalScript 
+	local script = Instance.new('LocalScript', Spawn)
 
 	local button = script.Parent
 	-- button
@@ -385,8 +383,8 @@ local function TJFP_fake_script() -- Spawn.LocalScript
 	
 	
 end
-coroutine.wrap(TJFP_fake_script)()
-local function KIPCB_fake_script() -- Spawn_2.LocalScript 
+coroutine.wrap(FMIY_fake_script)()
+local function NZHKQCK_fake_script() -- Spawn_2.LocalScript 
 	local script = Instance.new('LocalScript', Spawn_2)
 
 	local button = script.Parent
@@ -405,4 +403,4 @@ local function KIPCB_fake_script() -- Spawn_2.LocalScript
 	
 	
 end
-coroutine.wrap(KIPCB_fake_script)()
+coroutine.wrap(NZHKQCK_fake_script)()
