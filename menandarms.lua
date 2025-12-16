@@ -403,7 +403,7 @@ local script = G2L["11"];
 				-- example:
 				-- game:GetService("ReplicatedStorage").HealRemote:FireServer()
 	
-				task.wait(0.2)
+				task.wait(0.03)
 			end
 		end)
 	end)
