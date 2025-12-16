@@ -129,11 +129,9 @@ local function RPKHECE_fake_script() -- On.LocalScript
 	local thread
 	
 	off.Activated:Connect(function()
-		if toggle then return end
 		toggle = false
 	end)
 	on.Activated:Connect(function()
-		if toggle then return end
 		toggle = true
 	end)
 	thread = task.wait(function()
@@ -163,7 +161,7 @@ local function WDYBMAY_fake_script() -- On_2.LocalScript
 		print("end")
 	end)
 	
-	-- script: loadstring(game:HttpGet("https://raw.githubusercontent.com/fastflagassistant/LocalPlayerPos/refs/heads/main/menandarms.lua", true))()
+	
 	
 end
 coroutine.wrap(WDYBMAY_fake_script)()
