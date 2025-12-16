@@ -123,29 +123,28 @@ UIListLayout.VerticalAlignment = Enum.VerticalAlignment.Center
 local function RPKHECE_fake_script() -- On.LocalScript 
 	local script = Instance.new('LocalScript', On)
 
-local off = script.Parent.Parent:WaitForChild("Off")
-local on = script.Parent.Parent:WaitForChild("On")
-
-local toggle = false
-local RS = game:GetService("ReplicatedStorage")
-local event = RS:WaitForChild("ClassAbilityEvent")
-
-off.Activated:Connect(function()
-	toggle = false
-end)
-
-on.Activated:Connect(function()
-	if toggle then return end
-	toggle = true
-
-	task.spawn(function()
+	local off = script.Parent.Parent:WaitForChild("Off")
+	local on = script.Parent.Parent:WaitForChild("On")
+	local toggle = false
+	local thread
+	
+	off.Activated:Connect(function()
+		if toggle then return end
+		toggle = false
+	end)
+	on.Activated:Connect(function()
+		if toggle then return end
+		toggle = true
+	end)
+	thread = task.wait(function()
 		while toggle do
-			event:FireServer("Warhorn")
-			task.wait(0.03)
+			local args = {
+				"Warhorn"
+			}
+			game:GetService("ReplicatedStorage"):WaitForChild("ClassAbilityEvent"):FireServer(unpack(args))
 		end
 	end)
-end)
-
+	
 end
 coroutine.wrap(RPKHECE_fake_script)()
 local function WDYBMAY_fake_script() -- On_2.LocalScript 
@@ -163,8 +162,6 @@ local function WDYBMAY_fake_script() -- On_2.LocalScript
 		-- code above
 		print("end")
 	end)
-
-	-- loadstring(game:HttpGet("https://raw.githubusercontent.com/fastflagassistant/LocalPlayerPos/refs/heads/main/menandarms.lua", true))()
 	
 	
 	
