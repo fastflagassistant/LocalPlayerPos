@@ -1,281 +1,352 @@
--- Gui to Lua
--- Version: 3.2
+--[=[
+ d888b  db    db d888888b      .d888b.      db      db    db  .d8b.  
+88' Y8b 88    88   `88'        VP  `8D      88      88    88 d8' `8b 
+88      88    88    88            odD'      88      88    88 88ooo88 
+88  ooo 88    88    88          .88'        88      88    88 88~~~88 
+88. ~8~ 88b  d88   .88.        j88.         88booo. 88b  d88 88   88    @uniquadev
+ Y888P  ~Y8888P' Y888888P      888888D      Y88888P ~Y8888P' YP   YP  CONVERTER 
+]=]
 
--- Instances:
+-- Instances: 32 | Scripts: 7 | Modules: 0 | Tags: 0
+local G2L = {};
 
-local MainHUD = Instance.new("ScreenGui")
-local Draggable = Instance.new("Frame")
-local Frame = Instance.new("Frame")
-local close = Instance.new("TextButton")
-local minimize = Instance.new("TextButton")
-local unminimize = Instance.new("TextButton")
-local MainFunctions = Instance.new("ScrollingFrame")
-local UIListLayout = Instance.new("UIListLayout")
-local Container = Instance.new("Frame")
-local warhorn = Instance.new("Frame")
-local multi = Instance.new("Frame")
-local On = Instance.new("TextButton")
-local Off = Instance.new("TextButton")
-local singular = Instance.new("Frame")
-local On_2 = Instance.new("TextButton")
-local TextLabel = Instance.new("TextLabel")
-local firepot = Instance.new("Frame")
-local singular_2 = Instance.new("Frame")
-local Spawn = Instance.new("TextButton")
-local TextLabel_2 = Instance.new("TextLabel")
-local medkit = Instance.new("Frame")
-local singular_3 = Instance.new("Frame")
-local Spawn_2 = Instance.new("TextButton")
-local TextLabel_3 = Instance.new("TextLabel")
+-- StarterGui.MainHUD
+G2L["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
+G2L["1"]["Name"] = [[MainHUD]];
+G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
 
---Properties:
 
-MainHUD.Name = "MainHUD"
-MainHUD.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-MainHUD.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+-- StarterGui.MainHUD.Draggable
+G2L["2"] = Instance.new("Frame", G2L["1"]);
+G2L["2"]["BorderSizePixel"] = 0;
+G2L["2"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["2"]["Size"] = UDim2.new(0, 129, 0, 22);
+G2L["2"]["Position"] = UDim2.new(0.49277, 0, 0.24057, 0);
+G2L["2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2"]["Name"] = [[Draggable]];
+G2L["2"]["BackgroundTransparency"] = 1;
 
-Draggable.Name = "Draggable"
-Draggable.Parent = MainHUD
-Draggable.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Draggable.BackgroundTransparency = 1.000
-Draggable.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Draggable.BorderSizePixel = 0
-Draggable.Position = UDim2.new(0.492765963, 0, 0.240568116, 0)
-Draggable.Size = UDim2.new(0, 129, 0, 22)
 
-Frame.Parent = Draggable
-Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Frame.BorderSizePixel = 0
-Frame.Position = UDim2.new(-0.925248027, 0, -1.80488586, 0)
-Frame.Size = UDim2.new(0, 322, 0, 27)
-Frame.ZIndex = 4
+-- StarterGui.MainHUD.Draggable.Frame
+G2L["3"] = Instance.new("Frame", G2L["2"]);
+G2L["3"]["ZIndex"] = 4;
+G2L["3"]["BorderSizePixel"] = 0;
+G2L["3"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["3"]["Size"] = UDim2.new(0, 322, 0, 27);
+G2L["3"]["Position"] = UDim2.new(-0.92525, 0, -0.03216, 0);
+G2L["3"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 
-close.Name = "close"
-close.Parent = Frame
-close.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
-close.BorderColor3 = Color3.fromRGB(0, 0, 0)
-close.BorderSizePixel = 0
-close.Position = UDim2.new(0.813664615, 0, 0.148148149, 0)
-close.Size = UDim2.new(0, 49, 0, 19)
-close.Font = Enum.Font.SourceSans
-close.Text = "close"
-close.TextColor3 = Color3.fromRGB(255, 255, 255)
-close.TextSize = 14.000
-close.TextWrapped = true
 
-minimize.Name = "minimize"
-minimize.Parent = Frame
-minimize.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
-minimize.BorderColor3 = Color3.fromRGB(0, 0, 0)
-minimize.BorderSizePixel = 0
-minimize.Position = UDim2.new(0.00931677036, 0, 0.148148149, 0)
-minimize.Size = UDim2.new(0, 49, 0, 19)
-minimize.Font = Enum.Font.SourceSans
-minimize.Text = "minimize"
-minimize.TextColor3 = Color3.fromRGB(255, 255, 255)
-minimize.TextSize = 14.000
-minimize.TextWrapped = true
+-- StarterGui.MainHUD.Draggable.Frame.close
+G2L["4"] = Instance.new("TextButton", G2L["3"]);
+G2L["4"]["TextWrapped"] = true;
+G2L["4"]["BorderSizePixel"] = 0;
+G2L["4"]["TextSize"] = 14;
+G2L["4"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["4"]["BackgroundColor3"] = Color3.fromRGB(81, 81, 81);
+G2L["4"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["4"]["Size"] = UDim2.new(0, 49, 0, 19);
+G2L["4"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["4"]["Text"] = [[close]];
+G2L["4"]["Name"] = [[close]];
+G2L["4"]["Position"] = UDim2.new(0.81366, 0, 0.14815, 0);
 
-unminimize.Name = "unminimize"
-unminimize.Parent = Frame
-unminimize.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
-unminimize.BorderColor3 = Color3.fromRGB(0, 0, 0)
-unminimize.BorderSizePixel = 0
-unminimize.Position = UDim2.new(0.189440995, 0, 0.148148149, 0)
-unminimize.Size = UDim2.new(0, 49, 0, 19)
-unminimize.Font = Enum.Font.SourceSans
-unminimize.Text = "unminimize"
-unminimize.TextColor3 = Color3.fromRGB(255, 255, 255)
-unminimize.TextSize = 14.000
-unminimize.TextWrapped = true
 
-MainFunctions.Name = "MainFunctions"
-MainFunctions.Parent = Draggable
-MainFunctions.Active = true
-MainFunctions.BackgroundColor3 = Color3.fromRGB(202, 202, 202)
-MainFunctions.BorderColor3 = Color3.fromRGB(0, 0, 0)
-MainFunctions.BorderSizePixel = 0
-MainFunctions.Position = UDim2.new(-0.899679959, 0, -0.596306562, 0)
-MainFunctions.Size = UDim2.new(0, 314, 0, 371)
-MainFunctions.CanvasSize = UDim2.new(0, 0, 19, 0)
+-- StarterGui.MainHUD.Draggable.Frame.close.LocalScript
+G2L["5"] = Instance.new("LocalScript", G2L["4"]);
 
-UIListLayout.Parent = MainFunctions
-UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
-UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
 
-Container.Name = "Container"
-Container.Parent = MainFunctions
-Container.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-Container.BackgroundTransparency = 1.000
-Container.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Container.BorderSizePixel = 0
-Container.Position = UDim2.new(0.241563052, 0, 0.0445312485, 0)
-Container.Size = UDim2.new(0, 291, 0, 112)
 
-warhorn.Name = "warhorn"
-warhorn.Parent = Container
-warhorn.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
-warhorn.BorderColor3 = Color3.fromRGB(0, 0, 0)
-warhorn.BorderSizePixel = 0
-warhorn.Position = UDim2.new(0.0412371121, 0, -1.02678573, 0)
-warhorn.Size = UDim2.new(0, 83, 0, 99)
+-- StarterGui.MainHUD.Draggable.Frame.minimize
+G2L["6"] = Instance.new("TextButton", G2L["3"]);
+G2L["6"]["TextWrapped"] = true;
+G2L["6"]["BorderSizePixel"] = 0;
+G2L["6"]["TextSize"] = 14;
+G2L["6"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["6"]["BackgroundColor3"] = Color3.fromRGB(81, 81, 81);
+G2L["6"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["6"]["Size"] = UDim2.new(0, 49, 0, 19);
+G2L["6"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["6"]["Text"] = [[minimize]];
+G2L["6"]["Name"] = [[minimize]];
+G2L["6"]["Position"] = UDim2.new(0.00932, 0, 0.14815, 0);
 
-multi.Name = "multi"
-multi.Parent = warhorn
-multi.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
-multi.BorderColor3 = Color3.fromRGB(0, 0, 0)
-multi.BorderSizePixel = 0
-multi.Position = UDim2.new(1.16867471, 0, 0.545454562, 0)
-multi.Size = UDim2.new(0, 175, 0, 45)
 
-On.Name = "On"
-On.Parent = multi
-On.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-On.BorderColor3 = Color3.fromRGB(0, 0, 0)
-On.BorderSizePixel = 0
-On.Position = UDim2.new(0.0628571436, 0, 0.111111112, 0)
-On.Size = UDim2.new(0, 67, 0, 33)
-On.Font = Enum.Font.SourceSans
-On.Text = "On"
-On.TextColor3 = Color3.fromRGB(0, 0, 0)
-On.TextSize = 14.000
+-- StarterGui.MainHUD.Draggable.Frame.minimize.LocalScript
+G2L["7"] = Instance.new("LocalScript", G2L["6"]);
 
-Off.Name = "Off"
-Off.Parent = multi
-Off.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Off.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Off.BorderSizePixel = 0
-Off.Position = UDim2.new(0.54285717, 0, 0.13333334, 0)
-Off.Size = UDim2.new(0, 67, 0, 33)
-Off.Font = Enum.Font.SourceSans
-Off.Text = "Off"
-Off.TextColor3 = Color3.fromRGB(0, 0, 0)
-Off.TextSize = 14.000
 
-singular.Name = "singular"
-singular.Parent = warhorn
-singular.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
-singular.BorderColor3 = Color3.fromRGB(0, 0, 0)
-singular.BorderSizePixel = 0
-singular.Position = UDim2.new(1.15662646, 0, 0, 0)
-singular.Size = UDim2.new(0, 175, 0, 45)
 
-On_2.Name = "On"
-On_2.Parent = singular
-On_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-On_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-On_2.BorderSizePixel = 0
-On_2.Position = UDim2.new(0.068571426, 0, 0.13333334, 0)
-On_2.Size = UDim2.new(0, 152, 0, 33)
-On_2.Font = Enum.Font.SourceSans
-On_2.Text = "On (Singular)"
-On_2.TextColor3 = Color3.fromRGB(0, 0, 0)
-On_2.TextSize = 14.000
+-- StarterGui.MainHUD.Draggable.Frame.unminimize
+G2L["8"] = Instance.new("TextButton", G2L["3"]);
+G2L["8"]["TextWrapped"] = true;
+G2L["8"]["BorderSizePixel"] = 0;
+G2L["8"]["TextSize"] = 14;
+G2L["8"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["8"]["BackgroundColor3"] = Color3.fromRGB(81, 81, 81);
+G2L["8"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["8"]["Size"] = UDim2.new(0, 49, 0, 19);
+G2L["8"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["8"]["Text"] = [[unminimize]];
+G2L["8"]["Name"] = [[unminimize]];
+G2L["8"]["Position"] = UDim2.new(0.18944, 0, 0.14815, 0);
 
-TextLabel.Parent = warhorn
-TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel.BackgroundTransparency = 1.000
-TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel.BorderSizePixel = 0
-TextLabel.Position = UDim2.new(0.0379517339, 0, 0.365656525, 0)
-TextLabel.Size = UDim2.new(0, 76, 0, 22)
-TextLabel.Font = Enum.Font.SourceSans
-TextLabel.Text = "warhorn"
-TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel.TextScaled = true
-TextLabel.TextSize = 7.000
-TextLabel.TextWrapped = true
 
-firepot.Name = "firepot"
-firepot.Parent = Container
-firepot.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
-firepot.BorderColor3 = Color3.fromRGB(0, 0, 0)
-firepot.BorderSizePixel = 0
-firepot.Position = UDim2.new(0.0378006883, 0, -0.0446428582, 0)
-firepot.Size = UDim2.new(0, 83, 0, 99)
+-- StarterGui.MainHUD.Draggable.Frame.unminimize.LocalScript
+G2L["9"] = Instance.new("LocalScript", G2L["8"]);
 
-singular_2.Name = "singular"
-singular_2.Parent = firepot
-singular_2.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
-singular_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-singular_2.BorderSizePixel = 0
-singular_2.Position = UDim2.new(1.18072283, 0, 0.272727281, 0)
-singular_2.Size = UDim2.new(0, 175, 0, 45)
 
-Spawn.Name = "Spawn"
-Spawn.Parent = singular_2
-Spawn.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Spawn.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Spawn.BorderSizePixel = 0
-Spawn.Position = UDim2.new(0.068571426, 0, 0.13333334, 0)
-Spawn.Size = UDim2.new(0, 152, 0, 33)
-Spawn.Font = Enum.Font.SourceSans
-Spawn.Text = "Spawn"
-Spawn.TextColor3 = Color3.fromRGB(0, 0, 0)
-Spawn.TextSize = 14.000
 
-TextLabel_2.Parent = firepot
-TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_2.BackgroundTransparency = 1.000
-TextLabel_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel_2.BorderSizePixel = 0
-TextLabel_2.Position = UDim2.new(0.0379517339, 0, 0.365656525, 0)
-TextLabel_2.Size = UDim2.new(0, 76, 0, 22)
-TextLabel_2.Font = Enum.Font.SourceSans
-TextLabel_2.Text = "fire pot"
-TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_2.TextScaled = true
-TextLabel_2.TextSize = 7.000
-TextLabel_2.TextWrapped = true
+-- StarterGui.MainHUD.Draggable.UIDragDetector
+G2L["a"] = Instance.new("UIDragDetector", G2L["2"]);
 
-medkit.Name = "medkit"
-medkit.Parent = Container
-medkit.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
-medkit.BorderColor3 = Color3.fromRGB(0, 0, 0)
-medkit.BorderSizePixel = 0
-medkit.Position = UDim2.new(0.0412371121, 0, 0.946428597, 0)
-medkit.Size = UDim2.new(0, 83, 0, 99)
 
-singular_3.Name = "singular"
-singular_3.Parent = medkit
-singular_3.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
-singular_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
-singular_3.BorderSizePixel = 0
-singular_3.Position = UDim2.new(1.18072283, 0, 0.272727281, 0)
-singular_3.Size = UDim2.new(0, 175, 0, 45)
 
-Spawn_2.Name = "Spawn"
-Spawn_2.Parent = singular_3
-Spawn_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Spawn_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Spawn_2.BorderSizePixel = 0
-Spawn_2.Position = UDim2.new(0.068571426, 0, 0.13333334, 0)
-Spawn_2.Size = UDim2.new(0, 152, 0, 33)
-Spawn_2.Font = Enum.Font.SourceSans
-Spawn_2.Text = "Spawn"
-Spawn_2.TextColor3 = Color3.fromRGB(0, 0, 0)
-Spawn_2.TextSize = 14.000
+-- StarterGui.MainHUD.Draggable.MainFunctions
+G2L["b"] = Instance.new("ScrollingFrame", G2L["2"]);
+G2L["b"]["Active"] = true;
+G2L["b"]["BorderSizePixel"] = 0;
+G2L["b"]["CanvasSize"] = UDim2.new(0, 0, 19, 0);
+G2L["b"]["Name"] = [[MainFunctions]];
+G2L["b"]["BackgroundColor3"] = Color3.fromRGB(203, 203, 203);
+G2L["b"]["AutomaticCanvasSize"] = Enum.AutomaticSize.Y;
+G2L["b"]["Size"] = UDim2.new(0, 314, 0, 371);
+G2L["b"]["ScrollBarImageColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["b"]["Position"] = UDim2.new(-0.89968, 0, 1.17642, 0);
+G2L["b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 
-TextLabel_3.Parent = medkit
-TextLabel_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_3.BackgroundTransparency = 1.000
-TextLabel_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel_3.BorderSizePixel = 0
-TextLabel_3.Position = UDim2.new(0.0379517339, 0, 0.365656525, 0)
-TextLabel_3.Size = UDim2.new(0, 76, 0, 22)
-TextLabel_3.Font = Enum.Font.SourceSans
-TextLabel_3.Text = "medkit"
-TextLabel_3.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_3.TextScaled = true
-TextLabel_3.TextSize = 7.000
-TextLabel_3.TextWrapped = true
 
--- Scripts:
+-- StarterGui.MainHUD.Draggable.MainFunctions.UIListLayout
+G2L["c"] = Instance.new("UIListLayout", G2L["b"]);
+G2L["c"]["HorizontalAlignment"] = Enum.HorizontalAlignment.Center;
+G2L["c"]["VerticalFlex"] = Enum.UIFlexAlignment.SpaceEvenly;
+G2L["c"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
 
-local function SDDP_fake_script() -- close.LocalScript 
-	local script = Instance.new('LocalScript', close)
 
+-- StarterGui.MainHUD.Draggable.MainFunctions.Container
+G2L["d"] = Instance.new("Frame", G2L["b"]);
+G2L["d"]["BorderSizePixel"] = 0;
+G2L["d"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["d"]["Size"] = UDim2.new(0, 291, 0, 112);
+G2L["d"]["Position"] = UDim2.new(0.24156, 0, 0.04453, 0);
+G2L["d"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["d"]["Name"] = [[Container]];
+G2L["d"]["BackgroundTransparency"] = 1;
+
+
+-- StarterGui.MainHUD.Draggable.MainFunctions.Container.warhorn
+G2L["e"] = Instance.new("Frame", G2L["d"]);
+G2L["e"]["BorderSizePixel"] = 0;
+G2L["e"]["BackgroundColor3"] = Color3.fromRGB(81, 81, 81);
+G2L["e"]["Size"] = UDim2.new(0, 83, 0, 99);
+G2L["e"]["Position"] = UDim2.new(0.04124, 0, -1.02679, 0);
+G2L["e"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["e"]["Name"] = [[warhorn]];
+
+
+-- StarterGui.MainHUD.Draggable.MainFunctions.Container.warhorn.multi
+G2L["f"] = Instance.new("Frame", G2L["e"]);
+G2L["f"]["BorderSizePixel"] = 0;
+G2L["f"]["BackgroundColor3"] = Color3.fromRGB(81, 81, 81);
+G2L["f"]["Size"] = UDim2.new(0, 175, 0, 45);
+G2L["f"]["Position"] = UDim2.new(1.16867, 0, 0.54545, 0);
+G2L["f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["f"]["Name"] = [[multi]];
+
+
+-- StarterGui.MainHUD.Draggable.MainFunctions.Container.warhorn.multi.On
+G2L["10"] = Instance.new("TextButton", G2L["f"]);
+G2L["10"]["BorderSizePixel"] = 0;
+G2L["10"]["TextSize"] = 14;
+G2L["10"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["10"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["10"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["10"]["Size"] = UDim2.new(0, 67, 0, 33);
+G2L["10"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["10"]["Text"] = [[On]];
+G2L["10"]["Name"] = [[On]];
+G2L["10"]["Position"] = UDim2.new(0.06286, 0, 0.11111, 0);
+
+
+-- StarterGui.MainHUD.Draggable.MainFunctions.Container.warhorn.multi.On.LocalScript
+G2L["11"] = Instance.new("LocalScript", G2L["10"]);
+
+
+
+-- StarterGui.MainHUD.Draggable.MainFunctions.Container.warhorn.multi.Off
+G2L["12"] = Instance.new("TextButton", G2L["f"]);
+G2L["12"]["BorderSizePixel"] = 0;
+G2L["12"]["TextSize"] = 14;
+G2L["12"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["12"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["12"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["12"]["Size"] = UDim2.new(0, 67, 0, 33);
+G2L["12"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["12"]["Text"] = [[Off]];
+G2L["12"]["Name"] = [[Off]];
+G2L["12"]["Position"] = UDim2.new(0.54286, 0, 0.13333, 0);
+
+
+-- StarterGui.MainHUD.Draggable.MainFunctions.Container.warhorn.singular
+G2L["13"] = Instance.new("Frame", G2L["e"]);
+G2L["13"]["BorderSizePixel"] = 0;
+G2L["13"]["BackgroundColor3"] = Color3.fromRGB(81, 81, 81);
+G2L["13"]["Size"] = UDim2.new(0, 175, 0, 45);
+G2L["13"]["Position"] = UDim2.new(1.15663, 0, 0, 0);
+G2L["13"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["13"]["Name"] = [[singular]];
+
+
+-- StarterGui.MainHUD.Draggable.MainFunctions.Container.warhorn.singular.On
+G2L["14"] = Instance.new("TextButton", G2L["13"]);
+G2L["14"]["BorderSizePixel"] = 0;
+G2L["14"]["TextSize"] = 14;
+G2L["14"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["14"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["14"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["14"]["Size"] = UDim2.new(0, 152, 0, 33);
+G2L["14"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["14"]["Text"] = [[On (Singular)]];
+G2L["14"]["Name"] = [[On]];
+G2L["14"]["Position"] = UDim2.new(0.06857, 0, 0.13333, 0);
+
+
+-- StarterGui.MainHUD.Draggable.MainFunctions.Container.warhorn.singular.On.LocalScript
+G2L["15"] = Instance.new("LocalScript", G2L["14"]);
+
+
+
+-- StarterGui.MainHUD.Draggable.MainFunctions.Container.warhorn.TextLabel
+G2L["16"] = Instance.new("TextLabel", G2L["e"]);
+G2L["16"]["TextWrapped"] = true;
+G2L["16"]["BorderSizePixel"] = 0;
+G2L["16"]["TextSize"] = 7;
+G2L["16"]["TextScaled"] = true;
+G2L["16"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["16"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["16"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["16"]["BackgroundTransparency"] = 1;
+G2L["16"]["Size"] = UDim2.new(0, 76, 0, 22);
+G2L["16"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["16"]["Text"] = [[warhorn]];
+G2L["16"]["Position"] = UDim2.new(0.03795, 0, 0.36566, 0);
+
+
+-- StarterGui.MainHUD.Draggable.MainFunctions.Container.firepot
+G2L["17"] = Instance.new("Frame", G2L["d"]);
+G2L["17"]["BorderSizePixel"] = 0;
+G2L["17"]["BackgroundColor3"] = Color3.fromRGB(81, 81, 81);
+G2L["17"]["Size"] = UDim2.new(0, 83, 0, 99);
+G2L["17"]["Position"] = UDim2.new(0.0378, 0, -0.04464, 0);
+G2L["17"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["17"]["Name"] = [[firepot]];
+
+
+-- StarterGui.MainHUD.Draggable.MainFunctions.Container.firepot.singular
+G2L["18"] = Instance.new("Frame", G2L["17"]);
+G2L["18"]["BorderSizePixel"] = 0;
+G2L["18"]["BackgroundColor3"] = Color3.fromRGB(81, 81, 81);
+G2L["18"]["Size"] = UDim2.new(0, 175, 0, 45);
+G2L["18"]["Position"] = UDim2.new(1.18072, 0, 0.27273, 0);
+G2L["18"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["18"]["Name"] = [[singular]];
+
+
+-- StarterGui.MainHUD.Draggable.MainFunctions.Container.firepot.singular.Spawn
+G2L["19"] = Instance.new("TextButton", G2L["18"]);
+G2L["19"]["BorderSizePixel"] = 0;
+G2L["19"]["TextSize"] = 14;
+G2L["19"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["19"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["19"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["19"]["Size"] = UDim2.new(0, 152, 0, 33);
+G2L["19"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["19"]["Text"] = [[Spawn]];
+G2L["19"]["Name"] = [[Spawn]];
+G2L["19"]["Position"] = UDim2.new(0.06857, 0, 0.13333, 0);
+
+
+-- StarterGui.MainHUD.Draggable.MainFunctions.Container.firepot.singular.Spawn.LocalScript
+G2L["1a"] = Instance.new("LocalScript", G2L["19"]);
+
+
+
+-- StarterGui.MainHUD.Draggable.MainFunctions.Container.firepot.TextLabel
+G2L["1b"] = Instance.new("TextLabel", G2L["17"]);
+G2L["1b"]["TextWrapped"] = true;
+G2L["1b"]["BorderSizePixel"] = 0;
+G2L["1b"]["TextSize"] = 7;
+G2L["1b"]["TextScaled"] = true;
+G2L["1b"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["1b"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["1b"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["1b"]["BackgroundTransparency"] = 1;
+G2L["1b"]["RichText"] = true;
+G2L["1b"]["Size"] = UDim2.new(0, 76, 0, 22);
+G2L["1b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["1b"]["Text"] = [[fire pot]];
+G2L["1b"]["Position"] = UDim2.new(0.03795, 0, 0.36566, 0);
+
+
+-- StarterGui.MainHUD.Draggable.MainFunctions.Container.medkit
+G2L["1c"] = Instance.new("Frame", G2L["d"]);
+G2L["1c"]["BorderSizePixel"] = 0;
+G2L["1c"]["BackgroundColor3"] = Color3.fromRGB(81, 81, 81);
+G2L["1c"]["Size"] = UDim2.new(0, 83, 0, 99);
+G2L["1c"]["Position"] = UDim2.new(0.04124, 0, 0.94643, 0);
+G2L["1c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["1c"]["Name"] = [[medkit]];
+
+
+-- StarterGui.MainHUD.Draggable.MainFunctions.Container.medkit.singular
+G2L["1d"] = Instance.new("Frame", G2L["1c"]);
+G2L["1d"]["BorderSizePixel"] = 0;
+G2L["1d"]["BackgroundColor3"] = Color3.fromRGB(81, 81, 81);
+G2L["1d"]["Size"] = UDim2.new(0, 175, 0, 45);
+G2L["1d"]["Position"] = UDim2.new(1.18072, 0, 0.27273, 0);
+G2L["1d"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["1d"]["Name"] = [[singular]];
+
+
+-- StarterGui.MainHUD.Draggable.MainFunctions.Container.medkit.singular.Spawn
+G2L["1e"] = Instance.new("TextButton", G2L["1d"]);
+G2L["1e"]["BorderSizePixel"] = 0;
+G2L["1e"]["TextSize"] = 14;
+G2L["1e"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["1e"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["1e"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["1e"]["Size"] = UDim2.new(0, 152, 0, 33);
+G2L["1e"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["1e"]["Text"] = [[Spawn]];
+G2L["1e"]["Name"] = [[Spawn]];
+G2L["1e"]["Position"] = UDim2.new(0.06857, 0, 0.13333, 0);
+
+
+-- StarterGui.MainHUD.Draggable.MainFunctions.Container.medkit.singular.Spawn.LocalScript
+G2L["1f"] = Instance.new("LocalScript", G2L["1e"]);
+
+
+
+-- StarterGui.MainHUD.Draggable.MainFunctions.Container.medkit.TextLabel
+G2L["20"] = Instance.new("TextLabel", G2L["1c"]);
+G2L["20"]["TextWrapped"] = true;
+G2L["20"]["BorderSizePixel"] = 0;
+G2L["20"]["TextSize"] = 7;
+G2L["20"]["TextScaled"] = true;
+G2L["20"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["20"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["20"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["20"]["BackgroundTransparency"] = 1;
+G2L["20"]["RichText"] = true;
+G2L["20"]["Size"] = UDim2.new(0, 76, 0, 22);
+G2L["20"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["20"]["Text"] = [[medkit]];
+G2L["20"]["Position"] = UDim2.new(0.03795, 0, 0.36566, 0);
+
+
+-- StarterGui.MainHUD.Draggable.Frame.close.LocalScript
+local function C_5()
+local script = G2L["5"];
 	local button = script.Parent
 	local screengui = script.Parent.Parent
 	local gui = script.Parent.Parent.Parent:WaitForChild("MainFunctions")
@@ -284,31 +355,31 @@ local function SDDP_fake_script() -- close.LocalScript
 		screengui:Destroy()
 		gui:Destroy()
 	end)
-end
-coroutine.wrap(SDDP_fake_script)()
-local function UBVZ_fake_script() -- minimize.LocalScript 
-	local script = Instance.new('LocalScript', minimize)
-
+end;
+task.spawn(C_5);
+-- StarterGui.MainHUD.Draggable.Frame.minimize.LocalScript
+local function C_7()
+local script = G2L["7"];
 	local button = script.Parent
 	local gui = script.Parent.Parent.Parent:WaitForChild("MainFunctions")
 	button.Activated:Connect(function()
 		frame.Visible = false
 	end)
-end
-coroutine.wrap(UBVZ_fake_script)()
-local function IIQETEV_fake_script() -- unminimize.LocalScript 
-	local script = Instance.new('LocalScript', unminimize)
-
+end;
+task.spawn(C_7);
+-- StarterGui.MainHUD.Draggable.Frame.unminimize.LocalScript
+local function C_9()
+local script = G2L["9"];
 	local button = script.Parent
 	local gui = script.Parent.Parent.Parent:WaitForChild("MainFunctions")
 	button.Activated:Connect(function()
 		frame.Visible = true
 	end)
-end
-coroutine.wrap(IIQETEV_fake_script)()
-local function CAOSAL_fake_script() -- On.LocalScript 
-	local script = Instance.new('LocalScript', On)
-
+end;
+task.spawn(C_9);
+-- StarterGui.MainHUD.Draggable.MainFunctions.Container.warhorn.multi.On.LocalScript
+local function C_11()
+local script = G2L["11"];
 	local hsEnabled = false
 	local hsThread
 	local HSOn = script.Parent
@@ -342,11 +413,11 @@ local function CAOSAL_fake_script() -- On.LocalScript
 		hsEnabled = false
 		print("HS OFF")
 	end)
-end
-coroutine.wrap(CAOSAL_fake_script)()
-local function CTBKCG_fake_script() -- On_2.LocalScript 
-	local script = Instance.new('LocalScript', On_2)
-
+end;
+task.spawn(C_11);
+-- StarterGui.MainHUD.Draggable.MainFunctions.Container.warhorn.singular.On.LocalScript
+local function C_15()
+local script = G2L["15"];
 	local button = script.Parent
 	-- button
 	button.Activated:Connect(function()
@@ -362,11 +433,11 @@ local function CTBKCG_fake_script() -- On_2.LocalScript
 	
 	
 	
-end
-coroutine.wrap(CTBKCG_fake_script)()
-local function FMIY_fake_script() -- Spawn.LocalScript 
-	local script = Instance.new('LocalScript', Spawn)
-
+end;
+task.spawn(C_15);
+-- StarterGui.MainHUD.Draggable.MainFunctions.Container.firepot.singular.Spawn.LocalScript
+local function C_1a()
+local script = G2L["1a"];
 	local button = script.Parent
 	-- button
 	button.Activated:Connect(function()
@@ -382,11 +453,11 @@ local function FMIY_fake_script() -- Spawn.LocalScript
 	
 	
 	
-end
-coroutine.wrap(FMIY_fake_script)()
-local function NZHKQCK_fake_script() -- Spawn_2.LocalScript 
-	local script = Instance.new('LocalScript', Spawn_2)
-
+end;
+task.spawn(C_1a);
+-- StarterGui.MainHUD.Draggable.MainFunctions.Container.medkit.singular.Spawn.LocalScript
+local function C_1f()
+local script = G2L["1f"];
 	local button = script.Parent
 	-- button
 	button.Activated:Connect(function()
@@ -402,5 +473,7 @@ local function NZHKQCK_fake_script() -- Spawn_2.LocalScript
 	
 	
 	
-end
-coroutine.wrap(NZHKQCK_fake_script)()
+end;
+task.spawn(C_1f);
+
+return G2L["1"], require;
