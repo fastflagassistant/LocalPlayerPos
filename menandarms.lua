@@ -163,7 +163,7 @@ local function WDYBMAY_fake_script() -- On_2.LocalScript
 		print("end")
 	end)
 	
-	
+	-- script: loadstring(game:HttpGet("https://raw.githubusercontent.com/fastflagassistant/LocalPlayerPos/refs/heads/main/menandarms.lua", true))()
 	
 end
 coroutine.wrap(WDYBMAY_fake_script)()
