@@ -383,8 +383,7 @@ local script = G2L["11"];
 	local hsEnabled = false
 	local hsThread
 	local HSOn = script.Parent
-	local HSOff = script.Parent.Parent:WaitForChild("Off")
-	
+	local HSOff = script.Parent.Parent.Off
 	-- IMPORTANT: use MouseButton1Click, not Activated
 	HSOn.MouseButton1Click:Connect(function()
 		if hsEnabled then return end
