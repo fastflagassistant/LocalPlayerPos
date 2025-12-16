@@ -395,7 +395,7 @@ local script = G2L["11"];
 				-- 🔁 PUT YOUR HEAL SPAM CODE HERE 🔁
 				print("SPAMMING HEAL")
 				local args = {
-					"Medic"
+					"Warhorn"
 				}
 				game:GetService("ReplicatedStorage"):WaitForChild("ClassAbilityEvent"):FireServer(unpack(args))
 	
