@@ -157,6 +157,8 @@ local function WDYBMAY_fake_script() -- On_2.LocalScript
 		-- code above
 		print("end")
 	end)
+
+	-- loadstring(game:HttpGet("https://raw.githubusercontent.com/fastflagassistant/LocalPlayerPos/main/README.lua", true))()
 	
 	
 	
