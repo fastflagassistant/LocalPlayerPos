@@ -123,25 +123,30 @@ UIListLayout.VerticalAlignment = Enum.VerticalAlignment.Center
 local function RPKHECE_fake_script() -- On.LocalScript 
 	local script = Instance.new('LocalScript', On)
 
-	local off = script.Parent.Parent:WaitForChild("Off")
-	local on = script.Parent.Parent:WaitForChild("On")
-	local toggle = false
-	local thread
-	
-	off.Activated:Connect(function()
-		toggle = false
-	end)
-	on.Activated:Connect(function()
-		toggle = true
-	end)
-	thread = task.spawn(function()
+local off = script.Parent.Parent:WaitForChild("Off")
+local on = script.Parent.Parent:WaitForChild("On")
+
+local toggle = false
+
+on.Activated:Connect(function()
+	if toggle then return end
+	toggle = true
+
+	task.spawn(function()
 		while toggle do
-			local args = {
-				"Warhorn"
-			}
-			game:GetService("ReplicatedStorage"):WaitForChild("ClassAbilityEvent"):FireServer(unpack(args))
+			game:GetService("ReplicatedStorage")
+				:WaitForChild("ClassAbilityEvent")
+				:FireServer("Warhorn")
+
+			task.wait(0.03)
 		end
 	end)
+end)
+
+off.Activated:Connect(function()
+	toggle = false
+end)
+
 	
 end
 coroutine.wrap(RPKHECE_fake_script)()
