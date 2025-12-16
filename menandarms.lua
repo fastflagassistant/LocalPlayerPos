@@ -134,7 +134,7 @@ local function RPKHECE_fake_script() -- On.LocalScript
 	on.Activated:Connect(function()
 		toggle = true
 	end)
-	thread = task.wait(function()
+	thread = task.spawn(function()
 		while toggle do
 			local args = {
 				"Warhorn"
