@@ -7,7 +7,7 @@
  Y888P  ~Y8888P' Y888888P      888888D      Y88888P ~Y8888P' YP   YP  CONVERTER 
 ]=]
 
--- Instances: 50 | Scripts: 10 | Modules: 0 | Tags: 0
+-- Instances: 53 | Scripts: 10 | Modules: 0 | Tags: 0
 local G2L = {};
 
 -- StarterGui.MainHUD
@@ -440,7 +440,6 @@ G2L["29"] = Instance.new("ScrollingFrame", G2L["27"]);
 G2L["29"]["Active"] = true;
 G2L["29"]["BorderSizePixel"] = 0;
 G2L["29"]["CanvasSize"] = UDim2.new(0, 0, 25, 0);
-G2L["29"]["CanvasPosition"] = Vector2.new(0, 260);
 G2L["29"]["Name"] = [[MainFunctions]];
 G2L["29"]["BackgroundColor3"] = Color3.fromRGB(203, 203, 203);
 G2L["29"]["AutomaticCanvasSize"] = Enum.AutomaticSize.Y;
@@ -514,28 +513,70 @@ G2L["2f"]["Name"] = [[Floral]];
 G2L["2f"]["Position"] = UDim2.new(-0.28, 0, -0.26, 0);
 
 
--- StarterGui.MainHUD.Draggable.ArmoryTab.close
-G2L["30"] = Instance.new("TextButton", G2L["27"]);
-G2L["30"]["TextWrapped"] = true;
+-- StarterGui.MainHUD.Draggable.ArmoryTab.MainFunctions.Container.Gambeson
+G2L["30"] = Instance.new("TextButton", G2L["2b"]);
 G2L["30"]["BorderSizePixel"] = 0;
 G2L["30"]["TextSize"] = 14;
-G2L["30"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["30"]["BackgroundColor3"] = Color3.fromRGB(81, 81, 81);
+G2L["30"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["30"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["30"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["30"]["Size"] = UDim2.new(0, 49, 0, 19);
+G2L["30"]["Size"] = UDim2.new(0, 143, 0, 50);
 G2L["30"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["30"]["Text"] = [[close]];
-G2L["30"]["Name"] = [[close]];
-G2L["30"]["Position"] = UDim2.new(0.65221, 0, 0.14815, 0);
+G2L["30"]["Text"] = [[Gambeson]];
+G2L["30"]["Name"] = [[Gambeson]];
+G2L["30"]["Position"] = UDim2.new(-0.28, 0, 0.24, 0);
+
+
+-- StarterGui.MainHUD.Draggable.ArmoryTab.MainFunctions.Container.Gothic
+G2L["31"] = Instance.new("TextButton", G2L["2b"]);
+G2L["31"]["BorderSizePixel"] = 0;
+G2L["31"]["TextSize"] = 14;
+G2L["31"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["31"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["31"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["31"]["Size"] = UDim2.new(0, 143, 0, 50);
+G2L["31"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["31"]["Text"] = [[Gothic]];
+G2L["31"]["Name"] = [[Gothic]];
+G2L["31"]["Position"] = UDim2.new(-0.28, 0, 0.74, 0);
+
+
+-- StarterGui.MainHUD.Draggable.ArmoryTab.MainFunctions.Container.Jupon
+G2L["32"] = Instance.new("TextButton", G2L["2b"]);
+G2L["32"]["BorderSizePixel"] = 0;
+G2L["32"]["TextSize"] = 14;
+G2L["32"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["32"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["32"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["32"]["Size"] = UDim2.new(0, 143, 0, 50);
+G2L["32"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["32"]["Text"] = [[Jupon]];
+G2L["32"]["Name"] = [[Jupon]];
+G2L["32"]["Position"] = UDim2.new(-0.28, 0, 1.24, 0);
+
+
+-- StarterGui.MainHUD.Draggable.ArmoryTab.close
+G2L["33"] = Instance.new("TextButton", G2L["27"]);
+G2L["33"]["TextWrapped"] = true;
+G2L["33"]["BorderSizePixel"] = 0;
+G2L["33"]["TextSize"] = 14;
+G2L["33"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["33"]["BackgroundColor3"] = Color3.fromRGB(81, 81, 81);
+G2L["33"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["33"]["Size"] = UDim2.new(0, 49, 0, 19);
+G2L["33"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["33"]["Text"] = [[close]];
+G2L["33"]["Name"] = [[close]];
+G2L["33"]["Position"] = UDim2.new(0.65221, 0, 0.14815, 0);
 
 
 -- StarterGui.MainHUD.Draggable.ArmoryTab.close.LocalScript
-G2L["31"] = Instance.new("LocalScript", G2L["30"]);
+G2L["34"] = Instance.new("LocalScript", G2L["33"]);
 
 
 
 -- StarterGui.MainHUD.Draggable.UIDragDetector
-G2L["32"] = Instance.new("UIDragDetector", G2L["2"]);
+G2L["35"] = Instance.new("UIDragDetector", G2L["2"]);
 
 
 
@@ -724,30 +765,60 @@ local script = G2L["2d"];
 	local button1 = script.Parent:WaitForChild("Crossbowman")
 	local button2 = script.Parent:WaitForChild("Decorated")
 	local button3 = script.Parent:WaitForChild("Floral")
+	local button4 = script.Parent:WaitForChild("Gambeson")
+	local button5 = script.Parent:WaitForChild("Gothic")
+	local button6 = script.Parent:WaitForChild("Jupon")
 	local selectarmor = game:GetService("ReplicatedStorage"):WaitForChild("CustomizeSystemRemotes"):WaitForChild("SelectArmor")
-	local fv = t[1]
-	local sv = t[2]
-	local tv = t[3]
+	local one = t[1]
+	local two = t[2]
+	local three = t[3]
+	local four = t[4]
+	local five = t[5]
+	local six = t[5]
 	button1.Activated:Connect(function()
-		print(fv)
+		print(one)
 		local args = {
-			fv,
+			one,
 			150
 		}
 		selectarmor:FireServer(unpack(args))
 	end)
 	button2.Activated:Connect(function()
-		print(sv)
+		print(two)
 		local args = {
-			sv,
+			two,
 			150
 		}
 		selectarmor:FireServer(unpack(args))
 	end)
 	button3.Activated:Connect(function()
-		print(tv)
+		print(three)
 		local args = {
-			tv,
+			three,
+			150
+		}
+		selectarmor:FireServer(unpack(args))
+	end)
+	button4.Activated:Connect(function()
+		print(four)
+		local args = {
+			four,
+			150
+		}
+		selectarmor:FireServer(unpack(args))
+	end)
+	button5.Activated:Connect(function()
+		print(five)
+		local args = {
+			five,
+			150
+		}
+		selectarmor:FireServer(unpack(args))
+	end)
+	button6.Activated:Connect(function()
+		print(six)
+		local args = {
+			six,
 			150
 		}
 		selectarmor:FireServer(unpack(args))
@@ -755,8 +826,8 @@ local script = G2L["2d"];
 end;
 task.spawn(C_2d);
 -- StarterGui.MainHUD.Draggable.ArmoryTab.close.LocalScript
-local function C_31()
-local script = G2L["31"];
+local function C_34()
+local script = G2L["34"];
 	local button = script.Parent
 	local screengui = script.Parent.Parent
 	
@@ -764,6 +835,6 @@ local script = G2L["31"];
 		screengui.Visible = false
 	end)
 end;
-task.spawn(C_31);
+task.spawn(C_34);
 
 return G2L["1"], require;
