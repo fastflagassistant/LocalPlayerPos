@@ -4,8 +4,46 @@
 88      88    88    88            odD'      88      88    88 88ooo88 
 88  ooo 88    88    88          .88'        88      88    88 88~~~88 
 88. ~8~ 88b  d88   .88.        j88.         88booo. 88b  d88 88   88    @uniquadev
- Y888P  ~Y8888P' Y888888P      888888D      Y88888P ~Y8888P' YP   YP  CONVERTER 
+ Y888P  ~Y8888P' Y888888P      8888888D     Y88888P ~Y8888P' YP   YP  CONVERTER 
 ]=]
+
+
+-- No key, please don't steal some of my code, it's okay if you ask permission first though.
+-- Will obfuscate if people are skidding my code.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 -- Instances: 53 | Scripts: 10 | Modules: 0 | Tags: 0
 local G2L = {};
