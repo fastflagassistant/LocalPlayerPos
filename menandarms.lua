@@ -774,7 +774,7 @@ local script = G2L["2d"];
 	local three = t[3]
 	local four = t[4]
 	local five = t[5]
-	local six = t[5]
+	local six = t[6]
 	button1.Activated:Connect(function()
 		print(one)
 		local args = {
