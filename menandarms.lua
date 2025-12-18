@@ -44,7 +44,7 @@
 
 
 
--- Instances: 53 | Scripts: 10 | Modules: 0 | Tags: 0
+-- Instances: 50 | Scripts: 10 | Modules: 0 | Tags: 0
 local G2L = {};
 
 -- StarterGui.MainHUD
@@ -71,7 +71,7 @@ G2L["3"]["ZIndex"] = 4;
 G2L["3"]["BorderSizePixel"] = 0;
 G2L["3"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["3"]["Size"] = UDim2.new(0, 322, 0, 27);
-G2L["3"]["Position"] = UDim2.new(-0.92525, 0, -0.03216, 0);
+G2L["3"]["Position"] = UDim2.new(-0.97176, 0, 0.19511, 0);
 G2L["3"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["3"]["Name"] = [[Topbar]];
 
@@ -96,7 +96,7 @@ G2L["5"] = Instance.new("LocalScript", G2L["4"]);
 
 
 
--- StarterGui.MainHUD.Draggable.Topbar.armory
+-- StarterGui.MainHUD.Draggable.Topbar.close
 G2L["6"] = Instance.new("TextButton", G2L["3"]);
 G2L["6"]["TextWrapped"] = true;
 G2L["6"]["BorderSizePixel"] = 0;
@@ -104,14 +104,14 @@ G2L["6"]["TextSize"] = 14;
 G2L["6"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["6"]["BackgroundColor3"] = Color3.fromRGB(81, 81, 81);
 G2L["6"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["6"]["Size"] = UDim2.new(0, 106, 0, 19);
+G2L["6"]["Size"] = UDim2.new(0, 49, 0, 19);
 G2L["6"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["6"]["Text"] = [[armory]];
-G2L["6"]["Name"] = [[armory]];
-G2L["6"]["Position"] = UDim2.new(0.00932, 0, 0.14815, 0);
+G2L["6"]["Name"] = [[close]];
+G2L["6"]["Position"] = UDim2.new(0.03727, 0, 0.14815, 0);
 
 
--- StarterGui.MainHUD.Draggable.Topbar.armory.LocalScript
+-- StarterGui.MainHUD.Draggable.Topbar.close.LocalScript
 G2L["7"] = Instance.new("LocalScript", G2L["6"]);
 
 
@@ -119,6 +119,7 @@ G2L["7"] = Instance.new("LocalScript", G2L["6"]);
 -- StarterGui.MainHUD.Draggable.MainFunctions
 G2L["8"] = Instance.new("ScrollingFrame", G2L["2"]);
 G2L["8"]["Active"] = true;
+G2L["8"]["ZIndex"] = 522532352;
 G2L["8"]["BorderSizePixel"] = 0;
 G2L["8"]["CanvasSize"] = UDim2.new(0, 0, 25, 0);
 G2L["8"]["Name"] = [[MainFunctions]];
@@ -126,7 +127,7 @@ G2L["8"]["BackgroundColor3"] = Color3.fromRGB(203, 203, 203);
 G2L["8"]["AutomaticCanvasSize"] = Enum.AutomaticSize.Y;
 G2L["8"]["Size"] = UDim2.new(0, 314, 0, 371);
 G2L["8"]["ScrollBarImageColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["8"]["Position"] = UDim2.new(-0.89968, 0, 1.17642, 0);
+G2L["8"]["Position"] = UDim2.new(-0.94619, 0, 1.40369, 0);
 G2L["8"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 
 
@@ -456,172 +457,137 @@ G2L["26"]["Text"] = [[caltrops]];
 G2L["26"]["Position"] = UDim2.new(0.03795, 0, 0.36566, 0);
 
 
--- StarterGui.MainHUD.Draggable.ArmoryTab
-G2L["27"] = Instance.new("Frame", G2L["2"]);
-G2L["27"]["ZIndex"] = 4;
-G2L["27"]["BorderSizePixel"] = 0;
-G2L["27"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["27"]["Size"] = UDim2.new(0, 192, 0, 27);
-G2L["27"]["Position"] = UDim2.new(1.6484, 0, -0.03216, 0);
-G2L["27"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["27"]["Name"] = [[ArmoryTab]];
-
-
--- StarterGui.MainHUD.Draggable.ArmoryTab.UIDragDetector
-G2L["28"] = Instance.new("UIDragDetector", G2L["27"]);
+-- StarterGui.MainHUD.Draggable.UIDragDetector
+G2L["27"] = Instance.new("UIDragDetector", G2L["2"]);
 
 
 
--- StarterGui.MainHUD.Draggable.ArmoryTab.MainFunctions
-G2L["29"] = Instance.new("ScrollingFrame", G2L["27"]);
-G2L["29"]["Active"] = true;
+-- StarterGui.MainHUD.Draggable.armorytab
+G2L["28"] = Instance.new("Frame", G2L["2"]);
+G2L["28"]["BorderSizePixel"] = 0;
+G2L["28"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["28"]["Size"] = UDim2.new(0, 100, 0, 100);
+G2L["28"]["Position"] = UDim2.new(0, 0, -5.5, 0);
+G2L["28"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["28"]["Name"] = [[armorytab]];
+G2L["28"]["BackgroundTransparency"] = 1;
+
+
+-- StarterGui.MainHUD.Draggable.armorytab.ArmoryTopBar
+G2L["29"] = Instance.new("Frame", G2L["28"]);
+G2L["29"]["ZIndex"] = -3;
 G2L["29"]["BorderSizePixel"] = 0;
-G2L["29"]["CanvasSize"] = UDim2.new(0, 0, 25, 0);
-G2L["29"]["Name"] = [[MainFunctions]];
-G2L["29"]["BackgroundColor3"] = Color3.fromRGB(203, 203, 203);
-G2L["29"]["AutomaticCanvasSize"] = Enum.AutomaticSize.Y;
-G2L["29"]["Size"] = UDim2.new(0, 174, 0, 371);
-G2L["29"]["ScrollBarImageColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["29"]["Position"] = UDim2.new(0.04351, 0, 0.9946, 0);
+G2L["29"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["29"]["Size"] = UDim2.new(0, 264, 0, 27);
+G2L["29"]["Position"] = UDim2.new(-0.82517, 0, 1.47421, 0);
 G2L["29"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["29"]["Name"] = [[ArmoryTopBar]];
 
 
--- StarterGui.MainHUD.Draggable.ArmoryTab.MainFunctions.UIListLayout
-G2L["2a"] = Instance.new("UIListLayout", G2L["29"]);
-G2L["2a"]["HorizontalAlignment"] = Enum.HorizontalAlignment.Center;
-G2L["2a"]["VerticalFlex"] = Enum.UIFlexAlignment.SpaceEvenly;
-G2L["2a"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
+-- StarterGui.MainHUD.Draggable.armorytab.ArmoryTopBar.close
+G2L["2a"] = Instance.new("TextButton", G2L["29"]);
+G2L["2a"]["TextWrapped"] = true;
+G2L["2a"]["BorderSizePixel"] = 0;
+G2L["2a"]["TextSize"] = 14;
+G2L["2a"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["2a"]["BackgroundColor3"] = Color3.fromRGB(81, 81, 81);
+G2L["2a"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["2a"]["Size"] = UDim2.new(0, 49, 0, 19);
+G2L["2a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2a"]["Text"] = [[close]];
+G2L["2a"]["Name"] = [[close]];
+G2L["2a"]["Position"] = UDim2.new(0.77579, 0, 0.14815, 0);
 
 
--- StarterGui.MainHUD.Draggable.ArmoryTab.MainFunctions.Container
-G2L["2b"] = Instance.new("Frame", G2L["29"]);
-G2L["2b"]["BorderSizePixel"] = 0;
-G2L["2b"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["2b"]["Size"] = UDim2.new(0, 100, 0, 100);
-G2L["2b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["2b"]["Name"] = [[Container]];
-G2L["2b"]["BackgroundTransparency"] = 1;
+-- StarterGui.MainHUD.Draggable.armorytab.ArmoryTopBar.close.LocalScript
+G2L["2b"] = Instance.new("LocalScript", G2L["2a"]);
 
 
--- StarterGui.MainHUD.Draggable.ArmoryTab.MainFunctions.Container.Crossbowman
-G2L["2c"] = Instance.new("TextButton", G2L["2b"]);
+
+-- StarterGui.MainHUD.Draggable.armorytab.ArmoryTab
+G2L["2c"] = Instance.new("ScrollingFrame", G2L["28"]);
+G2L["2c"]["Active"] = true;
+G2L["2c"]["ZIndex"] = -1;
 G2L["2c"]["BorderSizePixel"] = 0;
-G2L["2c"]["TextSize"] = 14;
-G2L["2c"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["2c"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["2c"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["2c"]["Size"] = UDim2.new(0, 143, 0, 50);
+G2L["2c"]["CanvasSize"] = UDim2.new(0, 0, 25, 0);
+G2L["2c"]["Name"] = [[ArmoryTab]];
+G2L["2c"]["BackgroundColor3"] = Color3.fromRGB(177, 177, 177);
+G2L["2c"]["AutomaticCanvasSize"] = Enum.AutomaticSize.Y;
+G2L["2c"]["Size"] = UDim2.new(0, 249, 0, 328);
+G2L["2c"]["ScrollBarImageColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2c"]["Position"] = UDim2.new(-0.75859, 0, 1.73966, 0);
 G2L["2c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["2c"]["Text"] = [[Crossbowman]];
-G2L["2c"]["Name"] = [[Crossbowman]];
-G2L["2c"]["Position"] = UDim2.new(-0.28, 0, -1.26, 0);
 
 
--- StarterGui.MainHUD.Draggable.ArmoryTab.MainFunctions.Container.LocalScript
-G2L["2d"] = Instance.new("LocalScript", G2L["2b"]);
+-- StarterGui.MainHUD.Draggable.armorytab.ArmoryTab.UIListLayout
+G2L["2d"] = Instance.new("UIListLayout", G2L["2c"]);
+G2L["2d"]["HorizontalAlignment"] = Enum.HorizontalAlignment.Center;
+G2L["2d"]["VerticalFlex"] = Enum.UIFlexAlignment.SpaceEvenly;
+G2L["2d"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
 
 
-
--- StarterGui.MainHUD.Draggable.ArmoryTab.MainFunctions.Container.Decorated
-G2L["2e"] = Instance.new("TextButton", G2L["2b"]);
+-- StarterGui.MainHUD.Draggable.armorytab.ArmoryTab.Container
+G2L["2e"] = Instance.new("Frame", G2L["2c"]);
 G2L["2e"]["BorderSizePixel"] = 0;
-G2L["2e"]["TextSize"] = 14;
-G2L["2e"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["2e"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["2e"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["2e"]["Size"] = UDim2.new(0, 143, 0, 50);
+G2L["2e"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2e"]["Size"] = UDim2.new(0, 291, 0, 112);
+G2L["2e"]["Position"] = UDim2.new(0.24156, 0, 0.04453, 0);
 G2L["2e"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["2e"]["Text"] = [[Decorated]];
-G2L["2e"]["Name"] = [[Decorated]];
-G2L["2e"]["Position"] = UDim2.new(-0.28, 0, -0.76, 0);
+G2L["2e"]["Name"] = [[Container]];
+G2L["2e"]["BackgroundTransparency"] = 1;
 
 
--- StarterGui.MainHUD.Draggable.ArmoryTab.MainFunctions.Container.Floral
-G2L["2f"] = Instance.new("TextButton", G2L["2b"]);
+-- StarterGui.MainHUD.Draggable.armorytab.ArmoryTab.Container.crossbowman
+G2L["2f"] = Instance.new("TextButton", G2L["2e"]);
 G2L["2f"]["BorderSizePixel"] = 0;
 G2L["2f"]["TextSize"] = 14;
 G2L["2f"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["2f"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["2f"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["2f"]["Size"] = UDim2.new(0, 143, 0, 50);
+G2L["2f"]["Size"] = UDim2.new(0, 213, 0, 32);
 G2L["2f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["2f"]["Text"] = [[Floral]];
-G2L["2f"]["Name"] = [[Floral]];
-G2L["2f"]["Position"] = UDim2.new(-0.28, 0, -0.26, 0);
+G2L["2f"]["Text"] = [[crossbowman]];
+G2L["2f"]["Name"] = [[crossbowman]];
+G2L["2f"]["Position"] = UDim2.new(0.12027, 0, -0.88393, 0);
 
 
--- StarterGui.MainHUD.Draggable.ArmoryTab.MainFunctions.Container.Gambeson
-G2L["30"] = Instance.new("TextButton", G2L["2b"]);
-G2L["30"]["BorderSizePixel"] = 0;
-G2L["30"]["TextSize"] = 14;
-G2L["30"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["30"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["30"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["30"]["Size"] = UDim2.new(0, 143, 0, 50);
-G2L["30"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["30"]["Text"] = [[Gambeson]];
-G2L["30"]["Name"] = [[Gambeson]];
-G2L["30"]["Position"] = UDim2.new(-0.28, 0, 0.24, 0);
+-- StarterGui.MainHUD.Draggable.armorytab.ArmoryTab.Container.LocalScript
+G2L["30"] = Instance.new("LocalScript", G2L["2e"]);
 
 
--- StarterGui.MainHUD.Draggable.ArmoryTab.MainFunctions.Container.Gothic
-G2L["31"] = Instance.new("TextButton", G2L["2b"]);
+
+-- StarterGui.MainHUD.Draggable.armorytab.ArmoryTab.Container.decorated
+G2L["31"] = Instance.new("TextButton", G2L["2e"]);
 G2L["31"]["BorderSizePixel"] = 0;
 G2L["31"]["TextSize"] = 14;
 G2L["31"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["31"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["31"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["31"]["Size"] = UDim2.new(0, 143, 0, 50);
+G2L["31"]["Size"] = UDim2.new(0, 213, 0, 32);
 G2L["31"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["31"]["Text"] = [[Gothic]];
-G2L["31"]["Name"] = [[Gothic]];
-G2L["31"]["Position"] = UDim2.new(-0.28, 0, 0.74, 0);
+G2L["31"]["Text"] = [[decorated]];
+G2L["31"]["Name"] = [[decorated]];
+G2L["31"]["Position"] = UDim2.new(0.12027, 0, -0.59821, 0);
 
 
--- StarterGui.MainHUD.Draggable.ArmoryTab.MainFunctions.Container.Jupon
-G2L["32"] = Instance.new("TextButton", G2L["2b"]);
+-- StarterGui.MainHUD.Draggable.armorytab.ArmoryTab.Container.TextLabel
+G2L["32"] = Instance.new("TextLabel", G2L["2e"]);
 G2L["32"]["BorderSizePixel"] = 0;
 G2L["32"]["TextSize"] = 14;
-G2L["32"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["32"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["32"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["32"]["Size"] = UDim2.new(0, 143, 0, 50);
+G2L["32"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["32"]["Size"] = UDim2.new(0, 200, 0, 50);
 G2L["32"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["32"]["Text"] = [[Jupon]];
-G2L["32"]["Name"] = [[Jupon]];
-G2L["32"]["Position"] = UDim2.new(-0.28, 0, 1.24, 0);
-
-
--- StarterGui.MainHUD.Draggable.ArmoryTab.close
-G2L["33"] = Instance.new("TextButton", G2L["27"]);
-G2L["33"]["TextWrapped"] = true;
-G2L["33"]["BorderSizePixel"] = 0;
-G2L["33"]["TextSize"] = 14;
-G2L["33"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["33"]["BackgroundColor3"] = Color3.fromRGB(81, 81, 81);
-G2L["33"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["33"]["Size"] = UDim2.new(0, 49, 0, 19);
-G2L["33"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["33"]["Text"] = [[close]];
-G2L["33"]["Name"] = [[close]];
-G2L["33"]["Position"] = UDim2.new(0.65221, 0, 0.14815, 0);
-
-
--- StarterGui.MainHUD.Draggable.ArmoryTab.close.LocalScript
-G2L["34"] = Instance.new("LocalScript", G2L["33"]);
-
-
-
--- StarterGui.MainHUD.Draggable.UIDragDetector
-G2L["35"] = Instance.new("UIDragDetector", G2L["2"]);
-
+G2L["32"]["Text"] = [[under maintenace]];
+G2L["32"]["Position"] = UDim2.new(0.15808, 0, -0.22321, 0);
 
 
 -- StarterGui.MainHUD.Draggable.Topbar.close.LocalScript
 local function C_5()
 local script = G2L["5"];
 	local button = script.Parent
-	local screengui = script.Parent.Parent
+	local screengui = script.Parent.Parent.Parent.Parent
 	local gui = script.Parent.Parent.Parent:WaitForChild("MainFunctions")
 	
 	button.Activated:Connect(function()
@@ -630,13 +596,15 @@ local script = G2L["5"];
 	end)
 end;
 task.spawn(C_5);
--- StarterGui.MainHUD.Draggable.Topbar.armory.LocalScript
+-- StarterGui.MainHUD.Draggable.Topbar.close.LocalScript
 local function C_7()
 local script = G2L["7"];
+	local armorytab = script.Parent.Parent.Parent:WaitForChild("armorytab")
 	local button = script.Parent
-	local ArmoryTab = script.Parent.Parent.Parent:WaitForChild("ArmoryTab")
+	local t = game:GetService("TweenService")
+	local tween = t:Create(armorytab, TweenInfo.new(0.5), {Position = UDim2.new(2, 0, -5.5, 0)})
 	button.Activated:Connect(function()
-		ArmoryTab.Visible = true
+		tween:Play()
 	end)
 end;
 task.spawn(C_7);
@@ -795,83 +763,81 @@ local script = G2L["25"];
 	
 end;
 task.spawn(C_25);
--- StarterGui.MainHUD.Draggable.ArmoryTab.MainFunctions.Container.LocalScript
-local function C_2d()
-local script = G2L["2d"];
-	local t = {"Crossbowman", "Decorated", "Floral", "Gambeson", "Gothic", "Jupon", "PlateKnight", "Landsknecht", "LegacyVanguard", "Hauberk", "Vegabond", "Vanguard" }
-	local button1 = script.Parent:WaitForChild("Crossbowman")
-	local button2 = script.Parent:WaitForChild("Decorated")
-	local button3 = script.Parent:WaitForChild("Floral")
-	local button4 = script.Parent:WaitForChild("Gambeson")
-	local button5 = script.Parent:WaitForChild("Gothic")
-	local button6 = script.Parent:WaitForChild("Jupon")
-	local selectarmor = game:GetService("ReplicatedStorage"):WaitForChild("CustomizeSystemRemotes"):WaitForChild("SelectArmor")
-	local one = t[1]
-	local two = t[2]
-	local three = t[3]
-	local four = t[4]
-	local five = t[5]
-	local six = t[6]
-	button1.Activated:Connect(function()
-		print(one)
-		local args = {
-			one,
-			150
-		}
-		selectarmor:FireServer(unpack(args))
-	end)
-	button2.Activated:Connect(function()
-		print(two)
-		local args = {
-			two,
-			150
-		}
-		selectarmor:FireServer(unpack(args))
-	end)
-	button3.Activated:Connect(function()
-		print(three)
-		local args = {
-			three,
-			150
-		}
-		selectarmor:FireServer(unpack(args))
-	end)
-	button4.Activated:Connect(function()
-		print(four)
-		local args = {
-			four,
-			150
-		}
-		selectarmor:FireServer(unpack(args))
-	end)
-	button5.Activated:Connect(function()
-		print(five)
-		local args = {
-			five,
-			150
-		}
-		selectarmor:FireServer(unpack(args))
-	end)
-	button6.Activated:Connect(function()
-		print(six)
-		local args = {
-			six,
-			150
-		}
-		selectarmor:FireServer(unpack(args))
-	end)
-end;
-task.spawn(C_2d);
--- StarterGui.MainHUD.Draggable.ArmoryTab.close.LocalScript
-local function C_34()
-local script = G2L["34"];
+-- StarterGui.MainHUD.Draggable.armorytab.ArmoryTopBar.close.LocalScript
+local function C_2b()
+local script = G2L["2b"];
 	local button = script.Parent
-	local screengui = script.Parent.Parent
+	local gui = script.Parent.Parent.Parent:WaitForChild("ArmoryTab")
+	local armorytab = script.Parent.Parent.Parent
+	local t = game:GetService("TweenService")
+	local tween = t:Create(armorytab, TweenInfo.new(0.5), {Position = UDim2.new(0, 0, -5.5, 0)})
 	
 	button.Activated:Connect(function()
-		screengui.Visible = false
+		tween:Play()
 	end)
 end;
-task.spawn(C_34);
+task.spawn(C_2b);
+-- StarterGui.MainHUD.Draggable.armorytab.ArmoryTab.Container.LocalScript
+local function C_30()
+local script = G2L["30"];
+	local t = {"Crossbowman", "Decorated", "Floral", "Gambeson", "Gothic", "Jupon", "PlateKnight", "Landsknecht", "LegacyVanguard", "Hauberk", "Vegabond", "Vanguard"}
+	local selectarmor = game:GetService("ReplicatedStorage"):WaitForChild("CustomizeSystemRemotes"):WaitForChild("SelectArmor")
+	--buttons
+	local b1 = script.Parent:WaitForChild("crossbowman")
+	local b2 = script.Parent:WaitForChild("decorated")
+	local b3
+	local b4
+	local b5
+	local b6
+	local b7
+	local b8
+	local b9
+	local b10
+	local b11
+	local b12
+	
+	local var1 = t[1]
+	local var2 = t[2]
+	local var3 = t[3]
+	local var4 = t[4]
+	local var5 = t[5]
+	local var6 = t[6]
+	local var7 = t[7]
+	local var8 = t[8]
+	local var9 = t[9]
+	local var10 = t[10]
+	local var11 = t[11]
+	local var12 = t[12]
+	print(var1)
+	print(var2)
+	print(var3)
+	print(var4)
+	print(var5)
+	print(var6)
+	print(var7)
+	print(var8)
+	print(var9)
+	print(var10)
+	print(var11)
+	print(var12)
+	-- variable spam
+	-- actual logic below
+	
+	b1.Activated:Connect(function()
+		local args = {
+			var1,
+			150
+		}
+		selectarmor:FireServer(unpack(args))
+	end)
+	b2.Activated:Connect(function()
+		local args = {
+			var2,
+			150
+		}
+		selectarmor:FireServer(unpack(args))
+	end)
+end;
+task.spawn(C_30);
 
 return G2L["1"], require;
