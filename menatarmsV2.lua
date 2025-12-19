@@ -7,7 +7,7 @@
  Y888P  ~Y8888P' Y888888P      888888D      Y88888P ~Y8888P' YP   YP  CONVERTER 
 ]=]
 
--- Instances: 35 | Scripts: 4 | Modules: 0 | Tags: 0
+-- Instances: 45 | Scripts: 5 | Modules: 0 | Tags: 0
 local G2L = {};
 
 -- StarterGui.MAAV2
@@ -290,43 +290,137 @@ G2L["1f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["1f"]["Rotation"] = 45;
 
 
--- StarterGui.MAAV2.Topbar.Minimize
-G2L["20"] = Instance.new("Frame", G2L["2"]);
+-- StarterGui.MAAV2.Topbar.X.TextButton
+G2L["20"] = Instance.new("TextButton", G2L["1d"]);
 G2L["20"]["BorderSizePixel"] = 0;
+G2L["20"]["TextTransparency"] = 1;
+G2L["20"]["TextSize"] = 14;
+G2L["20"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["20"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["20"]["Size"] = UDim2.new(0, 40, 0, 40);
-G2L["20"]["Position"] = UDim2.new(0.85508, 0, 0, 0);
-G2L["20"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["20"]["Name"] = [[Minimize]];
+G2L["20"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
 G2L["20"]["BackgroundTransparency"] = 1;
+G2L["20"]["Size"] = UDim2.new(0, 55, 0, 50);
+G2L["20"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["20"]["Position"] = UDim2.new(-0.2, 0, -0.175, 0);
+
+
+-- StarterGui.MAAV2.Topbar.X.TextButton.LocalScript
+G2L["21"] = Instance.new("LocalScript", G2L["20"]);
+
+
+
+-- StarterGui.MAAV2.Topbar.Minimize
+G2L["22"] = Instance.new("Frame", G2L["2"]);
+G2L["22"]["BorderSizePixel"] = 0;
+G2L["22"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["22"]["Size"] = UDim2.new(0, 40, 0, 40);
+G2L["22"]["Position"] = UDim2.new(0.85508, 0, 0, 0);
+G2L["22"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["22"]["Name"] = [[Minimize]];
+G2L["22"]["BackgroundTransparency"] = 1;
 
 
 -- StarterGui.MAAV2.Topbar.Minimize.Frame
-G2L["21"] = Instance.new("Frame", G2L["20"]);
-G2L["21"]["BorderSizePixel"] = 0;
-G2L["21"]["BackgroundColor3"] = Color3.fromRGB(117, 117, 117);
-G2L["21"]["Size"] = UDim2.new(0, 35, 0, 2);
-G2L["21"]["Position"] = UDim2.new(0.06062, 0, 0.46351, 0);
-G2L["21"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["23"] = Instance.new("Frame", G2L["22"]);
+G2L["23"]["BorderSizePixel"] = 0;
+G2L["23"]["BackgroundColor3"] = Color3.fromRGB(117, 117, 117);
+G2L["23"]["Size"] = UDim2.new(0, 35, 0, 2);
+G2L["23"]["Position"] = UDim2.new(0.06062, 0, 0.46351, 0);
+G2L["23"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 
 
 -- StarterGui.MAAV2.Topbar.Minimize.TextButton
-G2L["22"] = Instance.new("TextButton", G2L["20"]);
-G2L["22"]["BorderSizePixel"] = 0;
-G2L["22"]["TextTransparency"] = 1;
-G2L["22"]["TextSize"] = 14;
-G2L["22"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["22"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["22"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["22"]["BackgroundTransparency"] = 1;
-G2L["22"]["Size"] = UDim2.new(0, 55, 0, 50);
-G2L["22"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["22"]["Position"] = UDim2.new(-0.2, 0, -0.175, 0);
+G2L["24"] = Instance.new("TextButton", G2L["22"]);
+G2L["24"]["BorderSizePixel"] = 0;
+G2L["24"]["TextTransparency"] = 1;
+G2L["24"]["TextSize"] = 14;
+G2L["24"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["24"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["24"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["24"]["BackgroundTransparency"] = 1;
+G2L["24"]["Size"] = UDim2.new(0, 55, 0, 50);
+G2L["24"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["24"]["Position"] = UDim2.new(-0.2, 0, -0.175, 0);
 
 
 -- StarterGui.MAAV2.Topbar.Minimize.TextButton.LocalScript
-G2L["23"] = Instance.new("LocalScript", G2L["22"]);
+G2L["25"] = Instance.new("LocalScript", G2L["24"]);
 
+
+
+-- StarterGui.MAAV2.Topbar.Armory
+G2L["26"] = Instance.new("Frame", G2L["2"]);
+G2L["26"]["BorderSizePixel"] = 0;
+G2L["26"]["SelectionOrder"] = -1;
+G2L["26"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["26"]["Size"] = UDim2.new(0, 478, 0, 290);
+G2L["26"]["Position"] = UDim2.new(-0.00067, 0, 1.28193, 0);
+G2L["26"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["26"]["Name"] = [[Armory]];
+G2L["26"]["BackgroundTransparency"] = 0.6;
+
+
+-- StarterGui.MAAV2.Topbar.Armory.Corner
+G2L["27"] = Instance.new("UICorner", G2L["26"]);
+G2L["27"]["Name"] = [[Corner]];
+G2L["27"]["CornerRadius"] = UDim.new(0, 6);
+
+
+-- StarterGui.MAAV2.Topbar.Armory.Outline
+G2L["28"] = Instance.new("UIStroke", G2L["26"]);
+G2L["28"]["Name"] = [[Outline]];
+
+
+-- StarterGui.MAAV2.Topbar.Armory.ScrollingFrame
+G2L["29"] = Instance.new("ScrollingFrame", G2L["26"]);
+G2L["29"]["Active"] = true;
+G2L["29"]["BorderSizePixel"] = 0;
+G2L["29"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["29"]["Size"] = UDim2.new(0, 449, 0, 270);
+G2L["29"]["ScrollBarImageColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["29"]["Position"] = UDim2.new(0.02881, 0, 0.03448, 0);
+G2L["29"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["29"]["BackgroundTransparency"] = 1;
+
+
+-- StarterGui.MAAV2.Topbar.Armory.ScrollingFrame.Container
+G2L["2a"] = Instance.new("Frame", G2L["29"]);
+G2L["2a"]["BorderSizePixel"] = 0;
+G2L["2a"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["2a"]["Size"] = UDim2.new(0, 1, 0, 1);
+G2L["2a"]["Position"] = UDim2.new(0.04545, 0, 0.16207, 0);
+G2L["2a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2a"]["Name"] = [[Container]];
+G2L["2a"]["BackgroundTransparency"] = 1;
+
+
+-- StarterGui.MAAV2.Topbar.Armory.ScrollingFrame.Container.one
+G2L["2b"] = Instance.new("TextButton", G2L["2a"]);
+G2L["2b"]["TextWrapped"] = true;
+G2L["2b"]["TextStrokeTransparency"] = 0;
+G2L["2b"]["BorderSizePixel"] = 0;
+G2L["2b"]["TextSize"] = 14;
+G2L["2b"]["TextScaled"] = true;
+G2L["2b"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["2b"]["SelectionOrder"] = 235235235;
+G2L["2b"]["BackgroundColor3"] = Color3.fromRGB(82, 82, 82);
+G2L["2b"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["2b"]["ZIndex"] = 737373;
+G2L["2b"]["BackgroundTransparency"] = 1;
+G2L["2b"]["Size"] = UDim2.new(0, 92, 0, 32);
+G2L["2b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2b"]["Text"] = [[hi]];
+G2L["2b"]["Name"] = [[one]];
+
+
+-- StarterGui.MAAV2.Topbar.Armory.ScrollingFrame.Container.one.UICorner
+G2L["2c"] = Instance.new("UICorner", G2L["2b"]);
+G2L["2c"]["CornerRadius"] = UDim.new(0, 4);
+
+
+-- StarterGui.MAAV2.Topbar.Armory.ScrollingFrame.UIListLayout
+G2L["2d"] = Instance.new("UIListLayout", G2L["29"]);
+G2L["2d"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
 
 
 -- StarterGui.MAAV2.Topbar.Buttons.ScrollingFrame.Container.Warhorn.LocalScript
@@ -413,29 +507,58 @@ local script = G2L["19"];
 	button.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 end;
 task.spawn(C_19);
+-- StarterGui.MAAV2.Topbar.X.TextButton.LocalScript
+local function C_21()
+local script = G2L["21"];
+	local button = script.Parent
+	local screengui = script.Parent.Parent.Parent.Parent
+	button.Activated:Connect(function()
+		screengui.Enabled = false
+	end)
+end;
+task.spawn(C_21);
 -- StarterGui.MAAV2.Topbar.Minimize.TextButton.LocalScript
-local function C_23()
-local script = G2L["23"];
+local function C_25()
+local script = G2L["25"];
+	-- variables ------------------------------------------------------------------------
 	local main = script.Parent.Parent.Parent:WaitForChild("Main")
 	local buttons = script.Parent.Parent.Parent:WaitForChild("Buttons")
 	local scrollingframe = buttons:WaitForChild("ScrollingFrame")
+	local buttons2 = script.Parent.Parent.Parent:WaitForChild("Armory")
+	local scrollingframe2 = buttons2:WaitForChild("ScrollingFrame")
 	local blur = main:WaitForChild("UIBlur")
 	local t = game:GetService("TweenService")
 	local tween = t:Create(main, TweenInfo.new(0.7), {Size = UDim2.new(0, 637, 0, 0)})
 	local tween2 = t:Create(main, TweenInfo.new(0.7), {Size = UDim2.new(0, 637, 0, 359)})
+	-- variables ------------------------------------------------------------------------
 	
-	
+	-- blur -----------------------------------------------------------------------------
 	local tween3 = t:Create(blur, TweenInfo.new(0.7), {Size = UDim2.new(0, 637, 0, 0)})
 	local tween4 = t:Create(blur, TweenInfo.new(0.7), {Size = UDim2.new(0, 637, 0, 359)})
+	-- blur -----------------------------------------------------------------------------
 	
-	
+	-- buttons -----------------------------------------------------------------------------
 	local tween6 = t:Create(buttons, TweenInfo.new(0.4), {Size = UDim2.new(0, 130, 0, 0)})
 	local tween7 = t:Create(buttons, TweenInfo.new(0.4), {Size = UDim2.new(0, 130, 0, 290)})
+	-- buttons -----------------------------------------------------------------------------
 	
-	
+	-- scrollingframe -----------------------------------------------------------------------------
 	local tween8 = t:Create(scrollingframe, TweenInfo.new(0.4), {Size = UDim2.new(0, 110, 0, 0)})
 	local tween9 = t:Create(scrollingframe, TweenInfo.new(0.4), {Size = UDim2.new(0, 110, 0, 270)})
+	-- scrollingframe -----------------------------------------------------------------------------
 	
+	-- scrollingframe2 ------------------------------------------------------------------------------
+	local tween10 = t:Create(scrollingframe2, TweenInfo.new(0.4), {Size = UDim2.new(0, 449, 0, 270)})
+	local tween11close = t:Create(scrollingframe2, TweenInfo.new(0.4), {Size = UDim2.new(0, 449, 0, 0)})
+	-- scrollingframe2 ------------------------------------------------------------------------------
+	
+	-- buttons2 ------------------------------------------------------------------------------
+	local tween12 = t:Create(buttons2, TweenInfo.new(0.4), {Size = UDim2.new(0, 478, 0, 290)})
+	local tween13close = t:Create(buttons2, TweenInfo.new(0.4), {Size = UDim2.new(0, 478, 0, 0)})
+	-- buttons2 ------------------------------------------------------------------------------
+	
+	
+	-- tween and minimize logic --------------------------------------------------------------------
 	local button = script.Parent
 	local active = false
 	button.Activated:Connect(function()
@@ -443,29 +566,40 @@ local script = G2L["23"];
 		active = not active
 	
 		if active then
-			print("Ability Enabled")
+			
 			tween6:Play()
 			tween8:Play()
+			tween11close:Play()
+			tween13close:Play()
 			task.wait(0.4)
 			scrollingframe.Visible = false
 			buttons.Visible = false
+			buttons2.Visible = false
+			scrollingframe2.Visible = false
 			tween:Play()
 			tween3:Play()
 			task.wait(0.7)
 			main.Visible = false
+			
 		else
-			print("Ability Disabled")
+			
 			main.Visible = true
 			tween2:Play()
 			tween4:Play()
 			task.wait(0.7)
 			buttons.Visible = true
 			scrollingframe.Visible = true
+			buttons2.Visible = true
+			scrollingframe2.Visible = true
+			tween10:Play()
+			tween12:Play()
 			tween7:Play()
 			tween9:Play()
+			
 		end
 	end)
+	-- tween and minimize logic --------------------------------------------------------------------
 end;
-task.spawn(C_23);
+task.spawn(C_25);
 
 return G2L["1"], require;
