@@ -1,0 +1,230 @@
+--[=[
+ d888b  db    db d888888b      .d888b.      db      db    db  .d8b.  
+88' Y8b 88    88   `88'        VP  `8D      88      88    88 d8' `8b 
+88      88    88    88            odD'      88      88    88 88ooo88 
+88  ooo 88    88    88          .88'        88      88    88 88~~~88 
+88. ~8~ 88b  d88   .88.        j88.         88booo. 88b  d88 88   88    @uniquadev
+ Y888P  ~Y8888P' Y888888P      888888D      Y88888P ~Y8888P' YP   YP  CONVERTER 
+]=]
+
+-- Instances: 22 | Scripts: 1 | Modules: 0 | Tags: 0
+local G2L = {};
+
+-- StarterGui.MAAV2
+G2L["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
+G2L["1"]["Name"] = [[MAAV2]];
+G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
+
+
+-- StarterGui.MAAV2.Topbar
+G2L["2"] = Instance.new("Frame", G2L["1"]);
+G2L["2"]["ZIndex"] = 3;
+G2L["2"]["BorderSizePixel"] = 0;
+G2L["2"]["SelectionOrder"] = 56;
+G2L["2"]["BackgroundColor3"] = Color3.fromRGB(34, 34, 34);
+G2L["2"]["Size"] = UDim2.new(0, 617, 0, 37);
+G2L["2"]["Position"] = UDim2.new(0.14141, 4, 0.21499, 0);
+G2L["2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2"]["Name"] = [[Topbar]];
+G2L["2"]["BackgroundTransparency"] = 0.6;
+
+
+-- StarterGui.MAAV2.Topbar.Outline
+G2L["3"] = Instance.new("UIStroke", G2L["2"]);
+G2L["3"]["Name"] = [[Outline]];
+
+
+-- StarterGui.MAAV2.Topbar.Corner
+G2L["4"] = Instance.new("UICorner", G2L["2"]);
+G2L["4"]["Name"] = [[Corner]];
+
+
+-- StarterGui.MAAV2.Topbar.Main
+G2L["5"] = Instance.new("Frame", G2L["2"]);
+G2L["5"]["BorderSizePixel"] = 0;
+G2L["5"]["SelectionOrder"] = -1;
+G2L["5"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["5"]["Size"] = UDim2.new(0, 637, 0, 359);
+G2L["5"]["Position"] = UDim2.new(-0.0185, 0, -0.33969, 0);
+G2L["5"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["5"]["Name"] = [[Main]];
+G2L["5"]["BackgroundTransparency"] = 1;
+
+
+-- StarterGui.MAAV2.Topbar.Main.Corner
+G2L["6"] = Instance.new("UICorner", G2L["5"]);
+G2L["6"]["Name"] = [[Corner]];
+G2L["6"]["CornerRadius"] = UDim.new(0, 6);
+
+
+-- StarterGui.MAAV2.Topbar.Main.Outline
+G2L["7"] = Instance.new("UIStroke", G2L["5"]);
+G2L["7"]["Name"] = [[Outline]];
+
+
+-- StarterGui.MAAV2.Topbar.UIDragDetector
+G2L["8"] = Instance.new("UIDragDetector", G2L["2"]);
+
+
+
+-- StarterGui.MAAV2.Topbar.UIBlur
+G2L["9"] = Instance.new("Frame", G2L["2"]);
+G2L["9"]["ZIndex"] = -1;
+G2L["9"]["BorderSizePixel"] = 0;
+G2L["9"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["9"]["Size"] = UDim2.new(0, 637, 0, 357);
+G2L["9"]["Position"] = UDim2.new(-0.01746, 0, -0.29701, 0);
+G2L["9"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["9"]["Name"] = [[UIBlur]];
+
+
+-- StarterGui.MAAV2.Topbar.UIBlur.UIGradient
+G2L["a"] = Instance.new("UIGradient", G2L["9"]);
+G2L["a"]["Rotation"] = 90;
+G2L["a"]["Transparency"] = NumberSequence.new{NumberSequenceKeypoint.new(0.000, 1),NumberSequenceKeypoint.new(1.000, 0.7)};
+G2L["a"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 0, 0)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(191, 191, 191))};
+
+
+-- StarterGui.MAAV2.Topbar.UIBlur.UICorner
+G2L["b"] = Instance.new("UICorner", G2L["9"]);
+
+
+
+-- StarterGui.MAAV2.Topbar.ImageButton
+G2L["c"] = Instance.new("ImageButton", G2L["2"]);
+G2L["c"]["BorderSizePixel"] = 0;
+G2L["c"]["BackgroundTransparency"] = 1;
+G2L["c"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["c"]["Image"] = [[rbxassetid://112666980543441]];
+G2L["c"]["Size"] = UDim2.new(0, 40, 0, 40);
+G2L["c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["c"]["Position"] = UDim2.new(0.935, 0, 0, 0);
+
+
+-- StarterGui.MAAV2.Topbar.Buttons
+G2L["d"] = Instance.new("Frame", G2L["2"]);
+G2L["d"]["BorderSizePixel"] = 0;
+G2L["d"]["SelectionOrder"] = -1;
+G2L["d"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["d"]["Size"] = UDim2.new(0, 130, 0, 290);
+G2L["d"]["Position"] = UDim2.new(0.78863, 0, 1.28193, 0);
+G2L["d"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["d"]["Name"] = [[Buttons]];
+G2L["d"]["BackgroundTransparency"] = 0.6;
+
+
+-- StarterGui.MAAV2.Topbar.Buttons.Corner
+G2L["e"] = Instance.new("UICorner", G2L["d"]);
+G2L["e"]["Name"] = [[Corner]];
+G2L["e"]["CornerRadius"] = UDim.new(0, 6);
+
+
+-- StarterGui.MAAV2.Topbar.Buttons.Outline
+G2L["f"] = Instance.new("UIStroke", G2L["d"]);
+G2L["f"]["Name"] = [[Outline]];
+
+
+-- StarterGui.MAAV2.Topbar.Buttons.ScrollingFrame
+G2L["10"] = Instance.new("ScrollingFrame", G2L["d"]);
+G2L["10"]["Active"] = true;
+G2L["10"]["BorderSizePixel"] = 0;
+G2L["10"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["10"]["Size"] = UDim2.new(0, 110, 0, 270);
+G2L["10"]["ScrollBarImageColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["10"]["Position"] = UDim2.new(0.07692, 0, 0.03448, 0);
+G2L["10"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["10"]["BackgroundTransparency"] = 1;
+
+
+-- StarterGui.MAAV2.Topbar.Buttons.ScrollingFrame.Container
+G2L["11"] = Instance.new("Frame", G2L["10"]);
+G2L["11"]["BorderSizePixel"] = 0;
+G2L["11"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["11"]["Size"] = UDim2.new(0, 100, 0, 100);
+G2L["11"]["Position"] = UDim2.new(0.04545, 0, 0.16207, 0);
+G2L["11"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["11"]["Name"] = [[Container]];
+G2L["11"]["BackgroundTransparency"] = 1;
+
+
+-- StarterGui.MAAV2.Topbar.Buttons.ScrollingFrame.Container.TextButton
+G2L["12"] = Instance.new("TextButton", G2L["11"]);
+G2L["12"]["TextWrapped"] = true;
+G2L["12"]["TextStrokeTransparency"] = 0;
+G2L["12"]["BorderSizePixel"] = 0;
+G2L["12"]["TextSize"] = 14;
+G2L["12"]["TextScaled"] = true;
+G2L["12"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["12"]["SelectionOrder"] = 235235235;
+G2L["12"]["BackgroundColor3"] = Color3.fromRGB(82, 82, 82);
+G2L["12"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["12"]["ZIndex"] = 737373;
+G2L["12"]["BackgroundTransparency"] = 1;
+G2L["12"]["Size"] = UDim2.new(0, 92, 0, 32);
+G2L["12"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["12"]["Text"] = [[Caltrops]];
+
+
+-- StarterGui.MAAV2.Topbar.Buttons.ScrollingFrame.Container.TextButton.LocalScript
+G2L["13"] = Instance.new("LocalScript", G2L["12"]);
+
+
+
+-- StarterGui.MAAV2.Topbar.Buttons.ScrollingFrame.Container.TextButton.UICorner
+G2L["14"] = Instance.new("UICorner", G2L["12"]);
+G2L["14"]["CornerRadius"] = UDim.new(0, 4);
+
+
+-- StarterGui.MAAV2.Topbar.Buttons.ScrollingFrame.UIListLayout
+G2L["15"] = Instance.new("UIListLayout", G2L["10"]);
+G2L["15"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
+
+
+-- StarterGui.MAAV2.Topbar.TextLabel
+G2L["16"] = Instance.new("TextLabel", G2L["2"]);
+G2L["16"]["TextWrapped"] = true;
+G2L["16"]["TextStrokeTransparency"] = 0;
+G2L["16"]["BorderSizePixel"] = 0;
+G2L["16"]["TextSize"] = 14;
+G2L["16"]["TextScaled"] = true;
+G2L["16"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["16"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["16"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["16"]["BackgroundTransparency"] = 1;
+G2L["16"]["Size"] = UDim2.new(0, 152, 0, 22);
+G2L["16"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["16"]["Text"] = [[Credits to "fastflagassistant"]];
+G2L["16"]["Position"] = UDim2.new(0.6872, 0, 0.18919, 0);
+
+
+-- StarterGui.MAAV2.Topbar.Buttons.ScrollingFrame.Container.TextButton.LocalScript
+local function C_13()
+local script = G2L["13"];
+	local button = script.Parent.Parent:WaitForChild("TextButton")
+	local ClassAbilityRE = game:GetService("ReplicatedStorage"):WaitForChild("ClassAbilityEvent")
+	local active = false
+	local function startAbilityLoop()
+		while active do
+			ClassAbilityRE:FireServer("Warhorn")
+			ClassAbilityRE:FireServer("Warhorn")
+			print("loop")
+			task.wait(0.01)
+		end
+	end
+	button.Activated:Connect(function()
+		print("clicked")
+		active = not active
+	
+		if active then
+			print("Ability Enabled")
+			task.spawn(startAbilityLoop)
+		else
+			print("Ability Disabled")
+		end
+	end)
+	button.Text = "OFF"
+	button.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+end;
+task.spawn(C_13);
+
+return G2L["1"], require;
