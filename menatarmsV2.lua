@@ -7,7 +7,7 @@
  Y888P  ~Y8888P' Y888888P      888888D      Y88888P ~Y8888P' YP   YP  CONVERTER 
 ]=]
 
--- Instances: 22 | Scripts: 1 | Modules: 0 | Tags: 0
+-- Instances: 28 | Scripts: 3 | Modules: 0 | Tags: 0
 local G2L = {};
 
 -- StarterGui.MAAV2
@@ -147,7 +147,7 @@ G2L["11"]["Name"] = [[Container]];
 G2L["11"]["BackgroundTransparency"] = 1;
 
 
--- StarterGui.MAAV2.Topbar.Buttons.ScrollingFrame.Container.TextButton
+-- StarterGui.MAAV2.Topbar.Buttons.ScrollingFrame.Container.Warhorn
 G2L["12"] = Instance.new("TextButton", G2L["11"]);
 G2L["12"]["TextWrapped"] = true;
 G2L["12"]["TextStrokeTransparency"] = 0;
@@ -162,42 +162,103 @@ G2L["12"]["ZIndex"] = 737373;
 G2L["12"]["BackgroundTransparency"] = 1;
 G2L["12"]["Size"] = UDim2.new(0, 92, 0, 32);
 G2L["12"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["12"]["Text"] = [[Caltrops]];
+G2L["12"]["Text"] = [[Warhorn Spam]];
+G2L["12"]["Name"] = [[Warhorn]];
 
 
--- StarterGui.MAAV2.Topbar.Buttons.ScrollingFrame.Container.TextButton.LocalScript
+-- StarterGui.MAAV2.Topbar.Buttons.ScrollingFrame.Container.Warhorn.LocalScript
 G2L["13"] = Instance.new("LocalScript", G2L["12"]);
 
 
 
--- StarterGui.MAAV2.Topbar.Buttons.ScrollingFrame.Container.TextButton.UICorner
+-- StarterGui.MAAV2.Topbar.Buttons.ScrollingFrame.Container.Warhorn.UICorner
 G2L["14"] = Instance.new("UICorner", G2L["12"]);
 G2L["14"]["CornerRadius"] = UDim.new(0, 4);
 
 
+-- StarterGui.MAAV2.Topbar.Buttons.ScrollingFrame.Container.Caltrops
+G2L["15"] = Instance.new("TextButton", G2L["11"]);
+G2L["15"]["TextWrapped"] = true;
+G2L["15"]["TextStrokeTransparency"] = 0;
+G2L["15"]["BorderSizePixel"] = 0;
+G2L["15"]["TextSize"] = 14;
+G2L["15"]["TextScaled"] = true;
+G2L["15"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["15"]["SelectionOrder"] = 235235235;
+G2L["15"]["BackgroundColor3"] = Color3.fromRGB(82, 82, 82);
+G2L["15"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["15"]["ZIndex"] = 737373;
+G2L["15"]["BackgroundTransparency"] = 1;
+G2L["15"]["Size"] = UDim2.new(0, 92, 0, 32);
+G2L["15"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["15"]["Text"] = [[Caltrops]];
+G2L["15"]["Name"] = [[Caltrops]];
+G2L["15"]["Position"] = UDim2.new(0, 0, 0.4, 0);
+
+
+-- StarterGui.MAAV2.Topbar.Buttons.ScrollingFrame.Container.Caltrops.LocalScript
+G2L["16"] = Instance.new("LocalScript", G2L["15"]);
+
+
+
+-- StarterGui.MAAV2.Topbar.Buttons.ScrollingFrame.Container.Caltrops.UICorner
+G2L["17"] = Instance.new("UICorner", G2L["15"]);
+G2L["17"]["CornerRadius"] = UDim.new(0, 4);
+
+
+-- StarterGui.MAAV2.Topbar.Buttons.ScrollingFrame.Container.Medic
+G2L["18"] = Instance.new("TextButton", G2L["11"]);
+G2L["18"]["TextWrapped"] = true;
+G2L["18"]["TextStrokeTransparency"] = 0;
+G2L["18"]["BorderSizePixel"] = 0;
+G2L["18"]["TextSize"] = 14;
+G2L["18"]["TextScaled"] = true;
+G2L["18"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["18"]["SelectionOrder"] = 235235235;
+G2L["18"]["BackgroundColor3"] = Color3.fromRGB(82, 82, 82);
+G2L["18"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["18"]["ZIndex"] = 737373;
+G2L["18"]["BackgroundTransparency"] = 1;
+G2L["18"]["Size"] = UDim2.new(0, 92, 0, 32);
+G2L["18"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["18"]["Text"] = [[Medic]];
+G2L["18"]["Name"] = [[Medic]];
+G2L["18"]["Position"] = UDim2.new(0, 0, 0.8, 0);
+
+
+-- StarterGui.MAAV2.Topbar.Buttons.ScrollingFrame.Container.Medic.LocalScript
+G2L["19"] = Instance.new("LocalScript", G2L["18"]);
+
+
+
+-- StarterGui.MAAV2.Topbar.Buttons.ScrollingFrame.Container.Medic.UICorner
+G2L["1a"] = Instance.new("UICorner", G2L["18"]);
+G2L["1a"]["CornerRadius"] = UDim.new(0, 4);
+
+
 -- StarterGui.MAAV2.Topbar.Buttons.ScrollingFrame.UIListLayout
-G2L["15"] = Instance.new("UIListLayout", G2L["10"]);
-G2L["15"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
+G2L["1b"] = Instance.new("UIListLayout", G2L["10"]);
+G2L["1b"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
 
 
 -- StarterGui.MAAV2.Topbar.TextLabel
-G2L["16"] = Instance.new("TextLabel", G2L["2"]);
-G2L["16"]["TextWrapped"] = true;
-G2L["16"]["TextStrokeTransparency"] = 0;
-G2L["16"]["BorderSizePixel"] = 0;
-G2L["16"]["TextSize"] = 14;
-G2L["16"]["TextScaled"] = true;
-G2L["16"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["16"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["16"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["16"]["BackgroundTransparency"] = 1;
-G2L["16"]["Size"] = UDim2.new(0, 152, 0, 22);
-G2L["16"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["16"]["Text"] = [[Credits to "fastflagassistant"]];
-G2L["16"]["Position"] = UDim2.new(0.6872, 0, 0.18919, 0);
+G2L["1c"] = Instance.new("TextLabel", G2L["2"]);
+G2L["1c"]["TextWrapped"] = true;
+G2L["1c"]["TextStrokeTransparency"] = 0;
+G2L["1c"]["BorderSizePixel"] = 0;
+G2L["1c"]["TextSize"] = 14;
+G2L["1c"]["TextScaled"] = true;
+G2L["1c"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["1c"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["1c"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["1c"]["BackgroundTransparency"] = 1;
+G2L["1c"]["Size"] = UDim2.new(0, 152, 0, 22);
+G2L["1c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["1c"]["Text"] = [[Credits to "fastflagassistant"]];
+G2L["1c"]["Position"] = UDim2.new(0.6872, 0, 0.18919, 0);
 
 
--- StarterGui.MAAV2.Topbar.Buttons.ScrollingFrame.Container.TextButton.LocalScript
+-- StarterGui.MAAV2.Topbar.Buttons.ScrollingFrame.Container.Warhorn.LocalScript
 local function C_13()
 local script = G2L["13"];
 	local button = script.Parent.Parent:WaitForChild("TextButton")
@@ -222,9 +283,64 @@ local script = G2L["13"];
 			print("Ability Disabled")
 		end
 	end)
-	button.Text = "OFF"
 	button.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 end;
 task.spawn(C_13);
+-- StarterGui.MAAV2.Topbar.Buttons.ScrollingFrame.Container.Caltrops.LocalScript
+local function C_16()
+local script = G2L["16"];
+	local button = script.Parent.Parent:WaitForChild("TextButton")
+	local ClassAbilityRE = game:GetService("ReplicatedStorage"):WaitForChild("ClassAbilityEvent")
+	local active = false
+	local function startAbilityLoop()
+		while active do
+			ClassAbilityRE:FireServer("Caltrops")
+			ClassAbilityRE:FireServer("Caltrops")
+			print("loop")
+			task.wait(0.01)
+		end
+	end
+	button.Activated:Connect(function()
+		print("clicked")
+		active = not active
+	
+		if active then
+			print("Ability Enabled")
+			task.spawn(startAbilityLoop)
+		else
+			print("Ability Disabled")
+		end
+	end)
+	button.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+end;
+task.spawn(C_16);
+-- StarterGui.MAAV2.Topbar.Buttons.ScrollingFrame.Container.Medic.LocalScript
+local function C_19()
+local script = G2L["19"];
+	local button = script.Parent.Parent:WaitForChild("TextButton")
+	local ClassAbilityRE = game:GetService("ReplicatedStorage"):WaitForChild("ClassAbilityEvent")
+	local active = false
+	local function startAbilityLoop()
+		while active do
+			ClassAbilityRE:FireServer("Medic")
+			ClassAbilityRE:FireServer("Medic")
+			print("loop")
+			task.wait(0.01)
+		end
+	end
+	button.Activated:Connect(function()
+		print("clicked")
+		active = not active
+	
+		if active then
+			print("Ability Enabled")
+			task.spawn(startAbilityLoop)
+		else
+			print("Ability Disabled")
+		end
+	end)
+	button.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+end;
+task.spawn(C_19);
 
 return G2L["1"], require;
