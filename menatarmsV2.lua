@@ -261,7 +261,7 @@ G2L["1c"]["Position"] = UDim2.new(0.6872, 0, 0.18919, 0);
 -- StarterGui.MAAV2.Topbar.Buttons.ScrollingFrame.Container.Warhorn.LocalScript
 local function C_13()
 local script = G2L["13"];
-	local button = script.Parent.Parent:WaitForChild("TextButton")
+	local button = script.Parent
 	local ClassAbilityRE = game:GetService("ReplicatedStorage"):WaitForChild("ClassAbilityEvent")
 	local active = false
 	local function startAbilityLoop()
@@ -289,7 +289,7 @@ task.spawn(C_13);
 -- StarterGui.MAAV2.Topbar.Buttons.ScrollingFrame.Container.Caltrops.LocalScript
 local function C_16()
 local script = G2L["16"];
-	local button = script.Parent.Parent:WaitForChild("TextButton")
+	local button = script.Parent
 	local ClassAbilityRE = game:GetService("ReplicatedStorage"):WaitForChild("ClassAbilityEvent")
 	local active = false
 	local function startAbilityLoop()
@@ -317,7 +317,7 @@ task.spawn(C_16);
 -- StarterGui.MAAV2.Topbar.Buttons.ScrollingFrame.Container.Medic.LocalScript
 local function C_19()
 local script = G2L["19"];
-	local button = script.Parent.Parent:WaitForChild("TextButton")
+	local button = script.Parent
 	local ClassAbilityRE = game:GetService("ReplicatedStorage"):WaitForChild("ClassAbilityEvent")
 	local active = false
 	local function startAbilityLoop()
